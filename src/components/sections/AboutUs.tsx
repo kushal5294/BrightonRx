@@ -1,9 +1,9 @@
-import { Info } from "../cards/Info";
+import { BtnLink } from "../shared/BtnLink";
 import { Container } from "../shared/Container";
 import { Paragraph } from "../shared/Paragraph";
 import { Title } from "../shared/Title";
 
-export const AboutUs = () => {
+export const AboutUsComp = () => {
   return (
     <section id="about-us">
       {" "}
@@ -18,57 +18,17 @@ export const AboutUs = () => {
           </div>
         </div>
 
-        <div className="w-full md:w-7/12 lg:w-1/2 flex flex-col">
-          <Title> About Our AI Solution </Title>
+        <div className="w-full md:w-7/12 lg:w-1/2 flex flex-col space-y-4">
+          <Title> Mission Statement </Title>
           <Paragraph>
-            We are on a mission to empower businesses with transformative AI
-            technology. Our team of experts combines industry‑leading research
-            with innovative algorithms to deliver a platform that adapts to your
-            unique needs. Join us and lead the digital revolution in your
-            industry.
+            Our mission is to improve our clients’ overall quality of health and
+            wellness by encouraging the proper effective use of medications
+            through exceptional products and services.
           </Paragraph>
 
-          <div className="pt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">
-            <Info
-              title="Mission"
-              description="Our mission is to use AI for the good of humanity and the planet."
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-4 h-4 sm:w-5 sm:h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
-                />
-              </svg>
-            </Info>
-            <Info
-              title="Vision"
-              description="Our vision is to drive business innovation and growth."
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-4 h-4 sm:w-5 sm:h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
-                />
-              </svg>
-            </Info>
+          <div className="pt-4 md:pt-8 flex justify-center lg:justify-start gap-4">
+            <BtnLink href="/about-us" text="About Us" />
+            <BtnLink href="/contact-us" text="Contact Us" />
           </div>
         </div>
       </Container>

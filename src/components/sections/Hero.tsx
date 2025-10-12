@@ -1,10 +1,9 @@
-import { Button } from "../shared/Button";
 import { Container } from "../shared/Container";
 import { Paragraph } from "../shared/Paragraph";
 
 export const Hero = () => {
   return (
-    <section className="relative pt-32 lg:pt-36">
+    <section className="relative pt-5 lg:pt-10">
       {" "}
       <Container className="flex flex-col lg:flex-row gap-10 lg:gap-12">
         <div className="absolute w-full lg:w-1/2 inset-y-0 lg:right-0">

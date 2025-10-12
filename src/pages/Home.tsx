@@ -1,10 +1,8 @@
 import { Footer } from "../components/elements/Footer";
 import { Navbar } from "../components/elements/Navbar";
-import { AboutUs } from "../components/sections/AboutUs";
-import { Brands } from "../components/sections/Brands";
-import { CTA } from "../components/sections/CallToAction";
+import { AboutUsComp } from "../components/sections/AboutUs";
+import { ContactInfo } from "../components/sections/ContactInfo";
 import { Hero } from "../components/sections/Hero";
-import { Pricing } from "../components/sections/Pricing";
 import { Services } from "../components/sections/Services";
 
 export const Home = () => {
@@ -17,13 +15,10 @@ export const Home = () => {
       <Services />
       <div className="h-16" />
 
-      <AboutUs />
+      <AboutUsComp />
       <div className="h-16" />
+      <ContactInfo />
 
-      <Pricing />
-      <div className="h-16" />
-
-      <CTA />
       <Footer />
     </>
   );
