@@ -4,19 +4,28 @@ import { Booking } from "./pages/Booking";
 import { AboutUs } from "./pages/AboutUs";
 import { Services } from "./pages/Services";
 import { ContactUs } from "./pages/ContactUs";
+import { Footer } from "./components/elements/Footer";
+import { Navbar } from "./components/elements/Navbar";
+import { Refill } from "./pages/Refill";
+import { ContactInfo } from "./components/sections/ContactInfo";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/booking" element={<Booking />} />
-        {/* to do add the about us page */}
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact-us" element={<ContactUs />} />
-      </Routes>
-    </BrowserRouter>
+    <div>
+      <Navbar />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/booking" element={<Booking />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/refill" element={<Refill />} />
+        </Routes>
+      </BrowserRouter>
+      <ContactInfo />
+      <Footer />
+    </div>
   );
 }
 

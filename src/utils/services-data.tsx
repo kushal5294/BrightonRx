@@ -9,7 +9,7 @@ export const services = [
         className="w-8 h-8"
       />
     ),
-    buttonLink: "/services",
+    buttonLink: "/refill",
     buttonText: "Refill",
   },
   {
@@ -22,7 +22,7 @@ export const services = [
         className="w-8 h-8"
       />
     ),
-    buttonLink: "/services",
+    buttonLink: "/transfer",
     buttonText: "Transfer",
   },
   {
@@ -36,7 +36,7 @@ export const services = [
         className="w-8 h-8"
       />
     ),
-    buttonLink: "/services",
+    buttonLink: "/auto-refills",
     buttonText: "Schedule",
   },
   {
@@ -45,7 +45,7 @@ export const services = [
     icon: (
       <img src="/assets/logos/car.svg" alt="car icon" className="w-8 h-8" />
     ),
-    buttonLink: "/services",
+    buttonLink: "/deliver",
     buttonText: "Deliver",
   },
   {
@@ -58,7 +58,7 @@ export const services = [
         className="w-8 h-8"
       />
     ),
-    buttonLink: "/services",
+    buttonLink: "/talk-to-our-pharmacist",
     buttonText: "Reach Out",
   },
   {

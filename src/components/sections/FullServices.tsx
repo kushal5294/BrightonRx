@@ -34,7 +34,7 @@ export const FullServices = () => {
             />
           ))}
         </div>
-        <div className="text-center mx-auto space-y-4 max-w-2xl pt-6">
+        <div className="text-center mx-auto space-y-4 max-w-2xl -mb-8">
           <div className="bg-gray-200 p-6 rounded-xl">
             <Paragraph>
               For further details about our services, you may call us at{" "}

@@ -95,6 +95,7 @@ export const ContactInfo = () => {
         </div>
 
         {/* Right side - Image */}
+
         <div className="hidden lg:block w-full h-80 sm:h-96 md:h-full min-h-[400px]">
           <img
             src="https://cdn.sanity.io/images/0vv8moc6/drugtopics/1ada8d1ec0a3eae647595989386d73c2046720a5-5673x3782.jpg"

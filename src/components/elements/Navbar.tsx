@@ -71,7 +71,7 @@ export const Navbar = () => {
             {/* Nav Links + Contact Info for large screens */}
             <div className="hidden lg:flex flex-col ml-auto justify-start gap-1 mt-6">
               {/* Nav Links */}
-              <ul className="flex flex-row items-center text-base list-none divide-x divide-gray-300">
+              <ul className="flex flex-row items-center justify-end text-base list-none divide-x divide-gray-300">
                 {navItems.map((item, key) => (
                   <li
                     key={key}
