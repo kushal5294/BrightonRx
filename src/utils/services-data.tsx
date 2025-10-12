@@ -19,7 +19,7 @@ export const services = [
       <img
         src="/assets/logos/transfer.svg"
         alt="Transfer Prescription"
-        className="w-9 h-9"
+        className="w-8 h-8"
       />
     ),
     buttonLink: "/services",
@@ -46,7 +46,7 @@ export const services = [
       <img
         src="/assets/logos/car.svg"
         alt="Refill Prescription"
-        className="w-12 h-12"
+        className="w-8 h-8"
       />
     ),
     buttonLink: "/services",
@@ -59,7 +59,7 @@ export const services = [
       <img
         src="/assets/logos/doctor.svg"
         alt="Transfer Prescription"
-        className="w-14 h-14"
+        className="w-8 h-8"
       />
     ),
     buttonLink: "/services",

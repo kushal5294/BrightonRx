@@ -36,7 +36,7 @@ export const Navbar = () => {
                 return (
                   <li
                     key={key}
-                    className={`${itemClass} items-center justify-center whitespace-nowrap rounded-md border border-[#19989d] text-[#19989d] px-2 py-0.5 hover:bg-gray-700 lg:border-0 lg:text-inherit lg:px-0 lg:py-0 lg:hover:bg-transparent`}
+                    className={`${itemClass} items-center justify-center whitespace-nowrap rounded-md border border-[#11b9bf] text-[#11b9bf] px-2 py-0.5 hover:bg-gray-700 lg:border-0 lg:text-inherit lg:px-0 lg:py-0 lg:hover:bg-transparent`}
                   >
                     <NavItem href={item.href} text={item.text} />
                     {key < navItems.length - 1 && (
@@ -48,7 +48,7 @@ export const Navbar = () => {
             </ul>
 
             {/* Contact Info */}
-            <div className="py-2 mt-2 lg:mt-1 lg:py-1 text-[#19989d] lg:text-inherit">
+            <div className="py-2 mt-2 lg:mt-1 lg:py-1 text-[#11b9bf] lg:text-inherit">
               <div className="flex flex-row flex-wrap items-center gap-4 text-base sm:text-sm lg:text-lg">
                 {/* Email */}
                 <div className="flex items-center gap-2">
