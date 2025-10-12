@@ -12,9 +12,6 @@ export const navItems = [
 ];
 
 export const Navbar = () => {
-  // Filter out "About Us" when showing boxes
-  const visibleNavItems = navItems.filter((item) => item.text !== "About Us");
-
   return (
     <header className="z-50 py-6 bg-gray-800 text-white lg:bg-white lg:text-[#175a81]">
       <Container>
@@ -29,34 +26,47 @@ export const Navbar = () => {
           <div className="flex flex-col items-center lg:items-end">
             {/* Nav Items Row */}
             <ul className="w-full flex flex-row flex-wrap justify-center items-center gap-2 text-base list-none">
-              {visibleNavItems.map((item, key) => (
-                <li
-                  key={key}
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md border border-gray-200 px-2 py-1 hover:bg-gray-700 lg:border-0 lg:px-0 lg:py-0 lg:hover:bg-transparent"
-                >
-                  <NavItem href={item.href} text={item.text} />
-                  {key < visibleNavItems.length - 1 && (
-                    <span className="mx-1 hidden lg:inline">|</span>
-                  )}
-                </li>
-              ))}
+              {navItems.map((item, key) => {
+                // Show About Us only on medium and large screens
+                const itemClass =
+                  item.text === "About Us"
+                    ? "hidden sm:hidden md:inline-flex"
+                    : "inline-flex";
+
+                return (
+                  <li
+                    key={key}
+                    className={`${itemClass} items-center justify-center whitespace-nowrap rounded-md border border-[#19989d] text-[#19989d] px-2 py-0.5 hover:bg-gray-700 lg:border-0 lg:text-inherit lg:px-0 lg:py-0 lg:hover:bg-transparent`}
+                  >
+                    <NavItem href={item.href} text={item.text} />
+                    {key < navItems.length - 1 && (
+                      <span className="mx-1 hidden lg:inline">|</span>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
 
             {/* Contact Info */}
-            <div className="py-4 mt-4 lg:mt-0">
-              <div className="flex flex-col lg:flex-row items-center gap-4 text-lg">
+            <div className="py-2 mt-2 lg:mt-1 lg:py-1 text-[#19989d] lg:text-inherit">
+              <div className="flex flex-row flex-wrap items-center gap-4 text-base sm:text-sm lg:text-lg">
+                {/* Email */}
                 <div className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 8 6"
                     fill="currentColor"
-                    className="w-5 h-5"
+                    className="w-5 h-5 align-middle"
                   >
                     <path d="m0 0h8v6h-8zm.75 .75v4.5h6.5v-4.5zM0 0l4 3 4-3v1l-4 3-4-3z" />
                   </svg>
-                  <span className="text-xl">{email}</span>
+                  <span>{email}</span>
                 </div>
+
+                {/* Separator only on large screens */}
                 <span className="hidden lg:inline">|</span>
+
+                {/* Phone */}
                 <div className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -68,11 +78,11 @@ export const Navbar = () => {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="feather feather-phone w-5 h-5"
+                    className="feather feather-phone w-5 h-5 align-middle"
                   >
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                   </svg>
-                  <span className="text-xl">{phone}</span>
+                  <span>{phone}</span>
                 </div>
               </div>
             </div>
