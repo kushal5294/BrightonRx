@@ -13,7 +13,7 @@ export const navItems = [
 
 export const Navbar = () => {
   return (
-    <header className="z-50 py-6 bg-white" style={{ color: "#175a81" }}>
+    <header className="z-50 py-6 bg-gray-800 text-white lg:bg-white lg:text-[#175a81]">
       <Container>
         <nav className="w-full flex flex-col lg:flex-row justify-between items-center">
           {/* Logo */}
@@ -24,38 +24,27 @@ export const Navbar = () => {
           </div>
 
           <div className="flex flex-col items-center lg:items-end">
-            <ul className="w-full flex flex-col gap-1 lg:flex-row lg:flex-wrap lg:justify-center lg:items-center lg:gap-2 text-base list-none">
-              {/* Small screen: split into two rows */}
-              <div className="flex justify-center gap-1 lg:justify-start lg:flex-row lg:w-auto">
-                {navItems.slice(0, 3).map((item, key) => (
-                  <li
-                    key={key}
-                    className="inline-flex items-center justify-center whitespace-nowrap rounded-md border border-gray-200 px-2 py-1 hover:bg-gray-100 lg:border-0 lg:px-0 lg:py-0 lg:hover:bg-transparent"
-                  >
-                    <NavItem href={item.href} text={item.text} />
-                    {key < 3 && (
-                      <span className="mx-1 hidden lg:inline">|</span>
-                    )}
-                  </li>
-                ))}
-              </div>
-
-              <div className="flex justify-center gap-1 lg:justify-start lg:flex-row lg:w-auto">
-                {navItems.slice(3).map((item, key) => (
-                  <li
-                    key={key + 3}
-                    className="inline-flex items-center justify-center whitespace-nowrap rounded-md border border-gray-200 px-2 py-1 hover:bg-gray-100 lg:border-0 lg:px-0 lg:py-0 lg:hover:bg-transparent"
-                  >
-                    <NavItem href={item.href} text={item.text} />
-                    {key + 3 < navItems.length - 1 && (
-                      <span className="mx-1 hidden lg:inline">|</span>
-                    )}
-                  </li>
-                ))}
-              </div>
+            {/* Nav Items Row */}
+            <ul className="w-full flex flex-row flex-wrap justify-center items-center gap-2 text-base list-none">
+              {navItems.map((item, key) => (
+                <li
+                  key={key}
+                  className={`
+                    inline-flex items-center justify-center whitespace-nowrap rounded-md border border-gray-200 px-2 py-1 hover:bg-gray-700 
+                    lg:border-0 lg:px-0 lg:py-0 lg:hover:bg-transparent
+                    ${item.text === "About Us" ? "!hidden lg:!inline-flex" : ""}
+                  `}
+                >
+                  <NavItem href={item.href} text={item.text} />
+                  {key < navItems.length - 1 && (
+                    <span className="mx-1 hidden lg:inline">|</span>
+                  )}
+                </li>
+              ))}
             </ul>
 
-            <div className="py-2 mt-6 lg:mt-0">
+            {/* Contact Info */}
+            <div className="py-4 mt-4 lg:mt-0">
               <div className="flex flex-col lg:flex-row items-center gap-4 text-lg">
                 <div className="flex items-center gap-2">
                   <svg
