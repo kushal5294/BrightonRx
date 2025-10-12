@@ -34,15 +34,26 @@ export const FullServices = () => {
             />
           ))}
         </div>
-        <div className="text-center mx-auto space-y-4">
-          <Paragraph>
-            For further details about our services, you may call us at{" "}
-            <strong>{phone}</strong> or{" "}
-            <Link to="/contact-us">
-              <strong>send us a message</strong>
-            </Link>{" "}
-            online.
-          </Paragraph>
+        <div className="text-center mx-auto space-y-4 max-w-2xl pt-6">
+          <div className="bg-gray-200 p-6 rounded-xl">
+            <Paragraph>
+              For further details about our services, you may call us at{" "}
+              <a
+                className="text-[#172554] font-semibold hover:underline"
+                href={`tel:${phone}`}
+              >
+                <strong>{phone}</strong>
+              </a>{" "}
+              or{" "}
+              <Link
+                className="text-[#172554] font-semibold hover:underline"
+                to="/contact-us"
+              >
+                <strong>send us a message</strong>
+              </Link>{" "}
+              online.
+            </Paragraph>
+          </div>
         </div>
       </Container>
     </section>
