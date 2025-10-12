@@ -10,6 +10,7 @@ interface PrescriptionRow {
 
 export default function RefillForm() {
   const [formData, setFormData] = useState({
+    form: "refill",
     lastName: "",
     firstName: "",
     phone: "",

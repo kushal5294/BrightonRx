@@ -3,7 +3,7 @@ import { darkBlue } from "../../utils/constants";
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
-    form: "contact-form",
+    form: "contact",
     firstName: "",
     lastName: "",
     address: "",
