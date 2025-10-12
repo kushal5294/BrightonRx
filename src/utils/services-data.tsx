@@ -26,7 +26,7 @@ export const services = [
     buttonText: "Transfer",
   },
   {
-    title: "Auto Refill",
+    title: "Automatic Refill",
     description:
       "Refilled multiple prescriptions at a particular time each month.",
     icon: (
@@ -66,7 +66,7 @@ export const services = [
     buttonText: "Reach Out",
   },
   {
-    title: "More Services",
+    title: "Explore More Services",
     description: "Explore our many services built around your lifestyle.",
     icon: (
       <img src="/assets/logos/info.svg" alt="Info Logo" className="w-8 h-8" />
