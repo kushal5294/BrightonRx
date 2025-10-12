@@ -5,7 +5,7 @@ import { darkBlue } from "../../utils/constants";
 interface PrescriptionRow {
   id: number;
   name: string;
-  quantity: string;
+  RxNumber: string;
 }
 
 export default function TransferForm() {
@@ -22,7 +22,7 @@ export default function TransferForm() {
   });
 
   const [prescriptions, setPrescriptions] = useState<PrescriptionRow[]>([
-    { id: 1, name: "", quantity: "" },
+    { id: 1, name: "", RxNumber: "" },
   ]);
 
   const handleChange = (
@@ -37,7 +37,7 @@ export default function TransferForm() {
 
   const handlePrescriptionChange = (
     id: number,
-    field: "name" | "quantity",
+    field: "name" | "RxNumber",
     value: string
   ) => {
     setPrescriptions((prev) =>
@@ -47,7 +47,7 @@ export default function TransferForm() {
 
   const addPrescription = () => {
     const newId = Math.max(...prescriptions.map((p) => p.id)) + 1;
-    setPrescriptions([...prescriptions, { id: newId, name: "", quantity: "" }]);
+    setPrescriptions([...prescriptions, { id: newId, name: "", RxNumber: "" }]);
   };
 
   const deletePrescription = (id: number) => {
@@ -263,27 +263,27 @@ export default function TransferForm() {
             </div>
           </div>
 
-          {/* ADD MORE PRESCRIPTIONS */}
+          {/* Transfer PRESCRIPTIONS */}
           <div>
             <h3 className="text-xl font-bold mb-2" style={{ color: darkBlue }}>
-              ADD MORE PRESCRIPTIONS
+              PRESCRIPTIONS TO BE TRANSFERRED
             </h3>
-            <p className="text-sm mb-4" style={{ color: darkBlue }}>
-              (OVER THE COUNTER ITEM)
+            <p className="text-lg mb-4" style={{ color: darkBlue }}>
+              List Specific Prescriptions To Be Transferred
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div
-                className="border-2 font-bold px-4 py-3 rounded-lg text-center"
+                className="border-2 font-bold px-4 py-3 rounded-lg flex items-center justify-center"
                 style={{ borderColor: darkBlue, color: darkBlue }}
               >
-                NAME
+                MEDICATION NAME
               </div>
               <div
                 className="border-2 font-bold px-4 py-3 rounded-lg text-center"
                 style={{ borderColor: darkBlue, color: darkBlue }}
               >
-                QTY
+                PRESCRIPTION # FROM CURRENT PHARMACY
               </div>
             </div>
 
@@ -318,11 +318,11 @@ export default function TransferForm() {
                 <div className="flex gap-2">
                   <input
                     type="text"
-                    value={prescription.quantity}
+                    value={prescription.RxNumber}
                     onChange={(e) =>
                       handlePrescriptionChange(
                         prescription.id,
-                        "quantity",
+                        "RxNumber",
                         e.target.value
                       )
                     }
