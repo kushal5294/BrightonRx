@@ -71,24 +71,21 @@ export const Navbar = () => {
             {/* Nav Links + Contact Info for large screens */}
             <div className="hidden lg:flex flex-col ml-auto justify-start gap-1 mt-6">
               {/* Nav Links */}
-              <ul className="flex flex-row gap-4 text-base list-none">
+              <ul className="flex flex-row items-center text-base list-none divide-x divide-gray-300">
                 {navItems.map((item, key) => (
                   <li
                     key={key}
-                    className="items-center justify-center whitespace-nowrap rounded-md border border-[#11b9bf] text-[#175a81] px-2 py-0.5 hover:bg-gray-100 lg:border-0 lg:px-0 lg:py-0 lg:hover:bg-transparent"
+                    className="items-center justify-center whitespace-nowrap px-3"
                   >
                     <NavItem href={item.href} text={item.text} />
-                    {key < navItems.length - 1 && (
-                      <span className="mx-1">|</span>
-                    )}
                   </li>
                 ))}
               </ul>
 
               {/* Contact Info in the same container, row below links */}
-              <div className="flex flex-row items-center gap-4 text-[#175a81] text-lg">
+              <div className="flex flex-row items-center gap-4 text-[#175a81] text-lg divide-x divide-gray-300">
                 {/* Email */}
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 px-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 8 6"
@@ -100,10 +97,8 @@ export const Navbar = () => {
                   <span>{email}</span>
                 </div>
 
-                <span>|</span>
-
                 {/* Phone */}
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 px-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"

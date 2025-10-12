@@ -1,6 +1,7 @@
 import { Container } from "../shared/Container";
 import { Paragraph } from "../shared/Paragraph";
 import { Title } from "../shared/Title";
+import { phone, fax, email, address } from "../../utils/constants";
 
 export const ContactInfo = () => {
   return (
@@ -37,8 +38,7 @@ export const ContactInfo = () => {
                   <circle cx="12" cy="10" r="2.5" />
                 </svg>
                 <div>
-                  <p>11460 E 12 Mile Rd.</p>
-                  <p>Warren, MI 48093</p>
+                  <p>{address}</p>
                 </div>
               </div>
 
@@ -56,8 +56,8 @@ export const ContactInfo = () => {
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                 </svg>
                 <div>
-                  <p>Call: 586-722-2842</p>
-                  <p>Fax: 586-279-1215</p>
+                  <p>Call: {phone}</p>
+                  <p>Fax: {fax}</p>
                 </div>
               </div>
 
@@ -78,7 +78,7 @@ export const ContactInfo = () => {
                   />
                 </svg>
                 <div>
-                  <p>warrenCare@gmail.com</p>
+                  <p>{email}</p>
                 </div>
               </div>
             </div>
@@ -86,13 +86,9 @@ export const ContactInfo = () => {
             {/* Google Map */}
             <div className="w-full h-[250px] md:h-[280px] md:col-span-1">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.858947121342!2d-83.024699684549!3d42.48399497917878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824d9e31f3130c7%3A0x6e6de5f7f3f7f2e4!2s11460%20E%2012%20Mile%20Rd%2C%20Warren%2C%20MI%2048093%2C%20USA!5e0!3m2!1sen!2sus!4v1678886400000!5m2!1sen!2sus"
-                width="100%"
-                height="100%"
-                style={{ border: 0, borderRadius: "1.5rem" }}
-                allowFullScreen={true}
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11759.247922109671!2d-83.78533797228832!3d42.53804857227368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88234f8af2baedad%3A0x6e0d996d4397fc78!2s8688%20W%20Grand%20River%20Ave%2C%20Brighton%2C%20MI%2048116!5e0!3m2!1sen!2sus!4v1760290643019!5m2!1sen!2sus"
+                className="w-full h-full rounded-2xl"
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
           </div>
