@@ -4,14 +4,14 @@ import { Title } from "../shared/Title";
 
 export const ContactInfo = () => {
   return (
-    <section id="contact-info" className="py-16 md:py-24">
+    <section id="contact-info" className="py-4 md:py-12">
       <Container className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
         {/* Left side - Title and content */}
-        <div className="w-full flex flex-col justify-center">
+        <div className="w-full flex flex-col justify-center text-center lg:text-left">
           <p className="text-lg text-gray-600">
             Better medicines, better life.
           </p>
-          <Title>Visit Us</Title>
+          <Title>Contact Information</Title>
           <Paragraph className="mt-4 max-w-2xl">
             Do not hesitate to get in touch with us. We gladly welcome your
             feedback, inquiries, and suggestions.
@@ -30,12 +30,18 @@ export const ContactInfo = () => {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
                   />
                 </svg>
 
                 <div>
-                  <p>warrenCare</p>
+                  <p>11460 E 12 Mile Rd.</p>
+                  <p>Warren, Michigan 48093</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -70,14 +76,10 @@ export const ContactInfo = () => {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
                   />
                 </svg>
+
                 <div>
                   <p>11460 E 12 Mile Rd.</p>
                   <p>Warren, Michigan 48093</p>

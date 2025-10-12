@@ -10,7 +10,7 @@ export const services = [
       />
     ),
     buttonLink: "/services",
-    buttonText: "Refill Rx",
+    buttonText: "Refill",
   },
   {
     title: "Transfer Prescription",
@@ -23,7 +23,7 @@ export const services = [
       />
     ),
     buttonLink: "/services",
-    buttonText: "Transfer Rx",
+    buttonText: "Transfer",
   },
   {
     title: "Auto Refill",
@@ -50,7 +50,7 @@ export const services = [
       />
     ),
     buttonLink: "/services",
-    buttonText: "Deliver Rx",
+    buttonText: "Deliver",
   },
   {
     title: "Pharmacist Consultation",

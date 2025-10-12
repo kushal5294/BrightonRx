@@ -18,7 +18,7 @@ export const AboutUsComp = () => {
           </div>
         </div>
 
-        <div className="w-full md:w-7/12 lg:w-1/2 flex flex-col space-y-4">
+        <div className="w-full md:w-7/12 lg:w-1/2 flex flex-col space-y-4 text-center md:text-left">
           <Title> Mission Statement </Title>
           <Paragraph>
             Our mission is to improve our clients’ overall quality of health and
