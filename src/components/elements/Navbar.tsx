@@ -32,7 +32,7 @@ export const Navbar = () => {
                   className={`
                     inline-flex items-center justify-center whitespace-nowrap rounded-md border border-gray-200 px-2 py-1 hover:bg-gray-700 
                     lg:border-0 lg:px-0 lg:py-0 lg:hover:bg-transparent
-                    ${item.text === "About Us" ? "!hidden lg:!inline-flex" : ""}
+                    ${item.text === "About Us" ? "!hidden md:!inline-flex" : ""}
                   `}
                 >
                   <NavItem href={item.href} text={item.text} />
