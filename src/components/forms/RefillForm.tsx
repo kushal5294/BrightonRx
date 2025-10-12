@@ -16,6 +16,7 @@ export default function RefillForm() {
     phone: "",
     pickupMethod: "pickup",
     notification: "",
+    formSubmitted: false,
   });
 
   const [rxNumbers, setRxNumbers] = useState(["", "", "", ""]);
@@ -60,13 +61,27 @@ export default function RefillForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setFormData((prev) => ({ ...prev, formSubmitted: true }));
+
+    const { firstName, lastName, phone, notification } = formData;
+    const atLeastOneRx = rxNumbers.some((rx) => rx.trim() !== "");
+
+    if (!firstName || !lastName || !phone || !notification || !atLeastOneRx) {
+      return;
+    }
+
     console.log("Form submitted:", { formData, rxNumbers, prescriptions });
+  };
+
+  const getBorderStyle = (value: string) => {
+    if (formData.formSubmitted && !value) return "red";
+    return "rgb(209, 213, 219)";
   };
 
   return (
     <div className="w-full max-w-4xl mx-auto mb-16 px-4 sm:px-6 md:px-0 -mt-3">
       <div className="bg-white border-2 border-gray-200 rounded-2xl shadow-lg p-6 sm:p-8 md:p-10">
-        <div className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div className="border-b-2 border-gray-200 pb-4">
             <h2 className="text-2xl font-bold text-red-600">
               * REQUIRED INFORMATION
@@ -95,14 +110,15 @@ export default function RefillForm() {
                   required
                   className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
                   style={{
-                    borderColor: "rgb(209, 213, 219)",
+                    borderColor: getBorderStyle(formData.firstName),
                     color: darkBlue,
                   }}
-                  onFocus={(e) => (e.target.style.borderColor = darkBlue)}
-                  onBlur={(e) =>
-                    (e.target.style.borderColor = "rgb(209, 213, 219)")
-                  }
                 />
+                {formData.formSubmitted && !formData.firstName && (
+                  <p className="text-red-500 text-sm mt-1">
+                    Please enter your first name.
+                  </p>
+                )}
               </div>
               <div>
                 <label
@@ -120,14 +136,15 @@ export default function RefillForm() {
                   required
                   className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
                   style={{
-                    borderColor: "rgb(209, 213, 219)",
+                    borderColor: getBorderStyle(formData.lastName),
                     color: darkBlue,
                   }}
-                  onFocus={(e) => (e.target.style.borderColor = darkBlue)}
-                  onBlur={(e) =>
-                    (e.target.style.borderColor = "rgb(209, 213, 219)")
-                  }
                 />
+                {formData.formSubmitted && !formData.lastName && (
+                  <p className="text-red-500 text-sm mt-1">
+                    Please enter your last name.
+                  </p>
+                )}
               </div>
             </div>
           </div>
@@ -148,18 +165,19 @@ export default function RefillForm() {
               placeholder="Enter phone number here"
               required
               className="w-full md:w-1/2 px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
-              style={{ borderColor: "rgb(209, 213, 219)", color: darkBlue }}
-              onFocus={(e) => (e.target.style.borderColor = darkBlue)}
-              onBlur={(e) =>
-                (e.target.style.borderColor = "rgb(209, 213, 219)")
-              }
+              style={{ borderColor: getBorderStyle(formData.phone), color: darkBlue }}
             />
+            {formData.formSubmitted && !formData.phone && (
+              <p className="text-red-500 text-sm mt-1">
+                Please enter your phone number.
+              </p>
+            )}
           </div>
 
           {/* RX REFILL NUMBERS */}
           <div>
             <h3 className="text-xl font-bold mb-4" style={{ color: darkBlue }}>
-              RX REFILL NUMBERS
+              RX REFILL NUMBERS <span className="text-red-600">*</span>
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {rxNumbers.map((value, index) => (
@@ -188,6 +206,12 @@ export default function RefillForm() {
                 </div>
               ))}
             </div>
+            {formData.formSubmitted &&
+              !rxNumbers.some((rx) => rx.trim() !== "") && (
+                <p className="text-red-500 text-sm mt-1">
+                  Please enter at least one RX number.
+                </p>
+              )}
           </div>
 
           {/* ADD MORE PRESCRIPTIONS */}
@@ -356,11 +380,7 @@ export default function RefillForm() {
               value={formData.notification}
               onChange={handleChange}
               className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors bg-white"
-              style={{ borderColor: "rgb(209, 213, 219)", color: darkBlue }}
-              onFocus={(e) => (e.target.style.borderColor = darkBlue)}
-              onBlur={(e) =>
-                (e.target.style.borderColor = "rgb(209, 213, 219)")
-              }
+              style={{ borderColor: getBorderStyle(formData.notification), color: darkBlue }}
             >
               <option value="">- Please Select -</option>
               <option value="email">Email</option>
@@ -368,6 +388,11 @@ export default function RefillForm() {
               <option value="text">Text Message</option>
               <option value="none">No Notification</option>
             </select>
+            {formData.formSubmitted && !formData.notification && (
+              <p className="text-red-500 text-sm mt-1">
+                Please select a notification method.
+              </p>
+            )}
           </div>
 
           {/* reCAPTCHA */}
@@ -381,8 +406,7 @@ export default function RefillForm() {
           {/* Submit Button */}
           <div className="-mt-4">
             <button
-              type="button"
-              onClick={handleSubmit}
+              type="submit"
               className="px-8 py-3 border-2 font-semibold rounded-lg transition-all shadow-md"
               style={{ borderColor: darkBlue, color: darkBlue }}
               onMouseEnter={(e) => {
@@ -395,7 +419,7 @@ export default function RefillForm() {
               SUBMIT
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );

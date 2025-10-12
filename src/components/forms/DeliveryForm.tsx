@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { darkBlue } from "../../utils/constants";
 
-export const AutoRefillForm = () => {
+export const DeliveryForm = () => {
   const [formData, setFormData] = useState({
-    form: "auto-refill",
+    form: "delivery",
     firstName: "",
     lastName: "",
     email: "",
     phone: "",
-    autoRefill: false,
+    delivery: false,
     notification: "",
     formSubmitted: false, // track submission attempt
   });
@@ -168,20 +168,19 @@ export const AutoRefillForm = () => {
           <div className="flex items-center gap-2 mb-4 pt-2 pb-4">
             <input
               type="checkbox"
-              id="autoRefill"
-              checked={formData.autoRefill}
+              id="delivery"
+              checked={formData.delivery}
               onChange={(e) =>
                 setFormData((prev) => ({
                   ...prev,
-                  autoRefill: e.target.checked,
+                  delivery: e.target.checked,
                 }))
               }
               className="w-5 h-5"
               style={{ accentColor: darkBlue }}
             />
-            <label htmlFor="autoRefill" style={{ color: darkBlue }}>
-              Yes, I want my prescriptions to be automatically refilled when it
-              is due.
+            <label htmlFor="delivery" style={{ color: darkBlue }}>
+              Yes, I want free pick-up and delivery of Rx.
             </label>
           </div>
 

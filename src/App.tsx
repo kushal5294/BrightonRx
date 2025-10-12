@@ -9,6 +9,7 @@ import { Navbar } from "./components/elements/Navbar";
 import { Refill } from "./pages/Refill";
 import { Transfer } from "./pages/Transfer";
 import { AutoRefill } from "./pages/AutoRefill";
+import { Delivery } from "./pages/Delivery";
 import { ContactInfo } from "./components/sections/ContactInfo";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/refill" element={<Refill />} />
           <Route path="/transfer" element={<Transfer />} />
           <Route path="/auto-refill" element={<AutoRefill />} />
+          <Route path="/deliver" element={<Delivery />} />
         </Routes>
       </BrowserRouter>
       <ContactInfo />
