@@ -10,6 +10,7 @@ import { Refill } from "./pages/Refill";
 import { Transfer } from "./pages/Transfer";
 import { AutoRefill } from "./pages/AutoRefill";
 import { Delivery } from "./pages/Delivery";
+import { Consult } from "./pages/Consult";
 import { ContactInfo } from "./components/sections/ContactInfo";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/transfer" element={<Transfer />} />
           <Route path="/auto-refill" element={<AutoRefill />} />
           <Route path="/deliver" element={<Delivery />} />
+          <Route path="/talk-to-our-pharmacist" element={<Consult />} />
         </Routes>
       </BrowserRouter>
       <ContactInfo />

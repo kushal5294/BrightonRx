@@ -1,0 +1,307 @@
+import { useState } from "react";
+import { darkBlue } from "../../utils/constants";
+
+export default function ConsultForm() {
+  const [formData, setFormData] = useState({
+    form: "consult",
+    lastName: "",
+    firstName: "",
+    phone: "",
+    email: "",
+    fax: "",
+    bestTimeToCall: "",
+    contactMethod: "",
+    address: "",
+    oldPharmacyName: "",
+    oldPharmacyPhone: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form submitted:", { formData });
+  };
+
+  return (
+    <div className="w-full max-w-4xl mx-auto mb-16 px-4 sm:px-6 md:px-0 -mt-3">
+      <div className="bg-white border-2 border-gray-200 rounded-2xl shadow-lg p-6 sm:p-8 md:p-10">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="border-b-2 border-gray-200 pb-4">
+            <h2 className="text-2xl font-bold text-red-600">
+              * REQUIRED INFORMATION
+            </h2>
+          </div>
+
+          {/* WHO IS THIS PRESCRIPTION FOR? */}
+          <div>
+            <h3 className="text-xl font-bold mb-4" style={{ color: darkBlue }}>
+              WHO IS THIS PRESCRIPTION FOR?
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label
+                  className="block text-sm font-semibold mb-2"
+                  style={{ color: darkBlue }}
+                >
+                  FIRST NAME <span className="text-red-600">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={formData.firstName || ""}
+                  onChange={handleChange}
+                  placeholder="Enter first name here"
+                  required
+                  className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
+                  style={{
+                    borderColor: "rgb(209, 213, 219)",
+                    color: darkBlue,
+                  }}
+                  onFocus={(e) => (e.target.style.borderColor = darkBlue)}
+                  onBlur={(e) =>
+                    (e.target.style.borderColor = "rgb(209, 213, 219)")
+                  }
+                />
+              </div>
+              <div>
+                <label
+                  className="block text-sm font-semibold mb-2"
+                  style={{ color: darkBlue }}
+                >
+                  LAST NAME <span className="text-red-600">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName || ""}
+                  onChange={handleChange}
+                  placeholder="Enter last name here"
+                  required
+                  className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
+                  style={{
+                    borderColor: "rgb(209, 213, 219)",
+                    color: darkBlue,
+                  }}
+                  onFocus={(e) => (e.target.style.borderColor = darkBlue)}
+                  onBlur={(e) =>
+                    (e.target.style.borderColor = "rgb(209, 213, 219)")
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          {/* Address */}
+          <div>
+            <label
+              className="block text-sm font-semibold mb-2"
+              style={{ color: darkBlue }}
+            >
+              ADDRESS <span className="text-red-600">*</span>
+            </label>
+            <input
+              type="text"
+              name="address"
+              value={formData.address || ""}
+              onChange={handleChange}
+              placeholder="Enter address here"
+              required
+              className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
+              style={{ borderColor: "rgb(209, 213, 219)", color: darkBlue }}
+              onFocus={(e) => (e.target.style.borderColor = darkBlue)}
+              onBlur={(e) =>
+                (e.target.style.borderColor = "rgb(209, 213, 219)")
+              }
+            />
+          </div>
+
+          {/* PHONE NUMBER & DOB */}
+          <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label
+                  className="block text-sm font-semibold mb-2"
+                  style={{ color: darkBlue }}
+                >
+                  PHONE <span className="text-red-600">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="phone"
+                  value={formData.phone || ""}
+                  onChange={handleChange}
+                  placeholder="Enter phone number here"
+                  required
+                  className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
+                  style={{
+                    borderColor: "rgb(209, 213, 219)",
+                    color: darkBlue,
+                  }}
+                  onFocus={(e) => (e.target.style.borderColor = darkBlue)}
+                  onBlur={(e) =>
+                    (e.target.style.borderColor = "rgb(209, 213, 219)")
+                  }
+                />
+              </div>
+              <div>
+                <label
+                  className="block text-sm font-semibold mb-2"
+                  style={{ color: darkBlue }}
+                >
+                  BEST TIME TO CALL <span className="text-red-600">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="bestTimeToCall"
+                  value={formData.bestTimeToCall || ""}
+                  onChange={handleChange}
+                  placeholder="Enter best time here"
+                  required
+                  className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
+                  style={{
+                    borderColor: "rgb(209, 213, 219)",
+                    color: darkBlue,
+                  }}
+                  onFocus={(e) => (e.target.style.borderColor = darkBlue)}
+                  onBlur={(e) =>
+                    (e.target.style.borderColor = "rgb(209, 213, 219)")
+                  }
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* email and fax */}
+          <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label
+                  className="block text-sm font-semibold mb-2"
+                  style={{ color: darkBlue }}
+                >
+                  EMAIL
+                </label>
+                <input
+                  type="text"
+                  name="email"
+                  value={formData.email || ""}
+                  onChange={handleChange}
+                  placeholder="Enter email here"
+                  required
+                  className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
+                  style={{
+                    borderColor: "rgb(209, 213, 219)",
+                    color: darkBlue,
+                  }}
+                  onFocus={(e) => (e.target.style.borderColor = darkBlue)}
+                  onBlur={(e) =>
+                    (e.target.style.borderColor = "rgb(209, 213, 219)")
+                  }
+                />
+              </div>
+              <div>
+                <label
+                  className="block text-sm font-semibold mb-2"
+                  style={{ color: darkBlue }}
+                >
+                  FAX
+                </label>
+                <input
+                  type="text"
+                  name="fax"
+                  value={formData.fax || ""}
+                  onChange={handleChange}
+                  placeholder="Enter fax here"
+                  required
+                  className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
+                  style={{
+                    borderColor: "rgb(209, 213, 219)",
+                    color: darkBlue,
+                  }}
+                  onFocus={(e) => (e.target.style.borderColor = darkBlue)}
+                  onBlur={(e) =>
+                    (e.target.style.borderColor = "rgb(209, 213, 219)")
+                  }
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* PICK UP OR DELIVERY */}
+          <div>
+            <label
+              className="block text-lg font-semibold mb-3"
+              style={{ color: darkBlue }}
+            >
+              HOW DO YOU PREFER TO BE CONTACTED?{" "}
+              <span className="text-red-600">*</span>
+            </label>
+            <div className="flex gap-6">
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="contactMethod"
+                  value="phone"
+                  checked={formData.contactMethod === "phone"}
+                  onChange={handleChange}
+                  className="w-5 h-5"
+                  style={{ accentColor: darkBlue }}
+                />
+                <span style={{ color: darkBlue }}>Phone</span>
+              </label>
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="contactMethod"
+                  value="email"
+                  checked={formData.contactMethod === "email"}
+                  onChange={handleChange}
+                  className="w-5 h-5"
+                  style={{ accentColor: darkBlue }}
+                />
+                <span style={{ color: darkBlue }}>Email</span>
+              </label>
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="contactMethod"
+                  value="fax"
+                  checked={formData.contactMethod === "fax"}
+                  onChange={handleChange}
+                  className="w-5 h-5"
+                  style={{ accentColor: darkBlue }}
+                />
+                <span style={{ color: darkBlue }}>Fax</span>
+              </label>
+            </div>
+          </div>
+
+          {/* Submit Button */}
+          <div className="-mt-4">
+            <button
+              type="submit"
+              className="px-8 py-3 border-2 font-semibold rounded-lg transition-all shadow-md"
+              style={{ borderColor: darkBlue, color: darkBlue }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "rgb(243, 244, 246)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "transparent";
+              }}
+            >
+              SUBMIT
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
