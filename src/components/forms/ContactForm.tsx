@@ -10,6 +10,7 @@ export const ContactForm = () => {
     email: "",
     phone: "",
     question: "",
+    formSubmitted: false,
   });
 
   const handleChange = (
@@ -24,12 +25,30 @@ export const ContactForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
+    setFormData((prev) => ({ ...prev, formSubmitted: true }));
+
+    const { firstName, lastName, address, email, phone } = formData;
+
+    // Check required fields
+    if (!firstName || !lastName || !address || !email || !phone) {
+      return;
+    }
+
+    // ✅ All valid — proceed
     console.log("Form submitted:", formData);
   };
 
+  // Helper to style invalid fields
+  const getBorderStyle = (value: string) => {
+    if (formData.formSubmitted && !value) return "red";
+    return "rgb(209, 213, 219)";
+  };
+
   return (
-    <div className="w-full max-w-4xl mx-auto mb-16 px-4 sm:px-6 md:px-0 -mt-4">
+    <form
+      onSubmit={handleSubmit}
+      className="w-full max-w-4xl mx-auto mb-16 px-4 sm:px-6 md:px-0 -mt-4"
+    >
       <div className="bg-white border-2 border-gray-200 rounded-2xl shadow-lg p-6 sm:p-8 md:p-10">
         <div className="space-y-6">
           <div className="border-b-2 border-gray-200 pb-4">
@@ -43,6 +62,8 @@ export const ContactForm = () => {
             <h3 className="text-xl font-bold mb-4" style={{ color: darkBlue }}>
               CONTACT INFORMATION
             </h3>
+
+            {/* FIRST + LAST NAME */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* First Name */}
               <div>
@@ -61,15 +82,17 @@ export const ContactForm = () => {
                   required
                   className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
                   style={{
-                    borderColor: "rgb(209, 213, 219)",
+                    borderColor: getBorderStyle(formData.firstName),
                     color: darkBlue,
                   }}
-                  onFocus={(e) => (e.target.style.borderColor = darkBlue)}
-                  onBlur={(e) =>
-                    (e.target.style.borderColor = "rgb(209, 213, 219)")
-                  }
                 />
+                {formData.formSubmitted && !formData.firstName && (
+                  <p className="text-red-500 text-sm mt-1">
+                    Please enter your first name.
+                  </p>
+                )}
               </div>
+
               {/* Last Name */}
               <div>
                 <label
@@ -87,19 +110,20 @@ export const ContactForm = () => {
                   required
                   className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
                   style={{
-                    borderColor: "rgb(209, 213, 219)",
+                    borderColor: getBorderStyle(formData.lastName),
                     color: darkBlue,
                   }}
-                  onFocus={(e) => (e.target.style.borderColor = darkBlue)}
-                  onBlur={(e) =>
-                    (e.target.style.borderColor = "rgb(209, 213, 219)")
-                  }
                 />
+                {formData.formSubmitted && !formData.lastName && (
+                  <p className="text-red-500 text-sm mt-1">
+                    Please enter your last name.
+                  </p>
+                )}
               </div>
             </div>
           </div>
 
-          {/* Address */}
+          {/* ADDRESS */}
           <div>
             <label
               className="block text-sm font-semibold mb-2"
@@ -115,16 +139,21 @@ export const ContactForm = () => {
               placeholder="Enter address here"
               required
               className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
-              style={{ borderColor: "rgb(209, 213, 219)", color: darkBlue }}
-              onFocus={(e) => (e.target.style.borderColor = darkBlue)}
-              onBlur={(e) =>
-                (e.target.style.borderColor = "rgb(209, 213, 219)")
-              }
+              style={{
+                borderColor: getBorderStyle(formData.address),
+                color: darkBlue,
+              }}
             />
+            {formData.formSubmitted && !formData.address && (
+              <p className="text-red-500 text-sm mt-1">
+                Please enter your address.
+              </p>
+            )}
           </div>
 
-          {/* Email and Phone */}
+          {/* EMAIL + PHONE */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Email */}
             <div>
               <label
                 className="block text-sm font-semibold mb-2"
@@ -141,15 +170,18 @@ export const ContactForm = () => {
                 required
                 className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
                 style={{
-                  borderColor: "rgb(209, 213, 219)",
+                  borderColor: getBorderStyle(formData.email),
                   color: darkBlue,
                 }}
-                onFocus={(e) => (e.target.style.borderColor = darkBlue)}
-                onBlur={(e) =>
-                  (e.target.style.borderColor = "rgb(209, 213, 219)")
-                }
               />
+              {formData.formSubmitted && !formData.email && (
+                <p className="text-red-500 text-sm mt-1">
+                  Please enter your email.
+                </p>
+              )}
             </div>
+
+            {/* Phone */}
             <div>
               <label
                 className="block text-sm font-semibold mb-2"
@@ -166,18 +198,19 @@ export const ContactForm = () => {
                 required
                 className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
                 style={{
-                  borderColor: "rgb(209, 213, 219)",
+                  borderColor: getBorderStyle(formData.phone),
                   color: darkBlue,
                 }}
-                onFocus={(e) => (e.target.style.borderColor = darkBlue)}
-                onBlur={(e) =>
-                  (e.target.style.borderColor = "rgb(209, 213, 219)")
-                }
               />
+              {formData.formSubmitted && !formData.phone && (
+                <p className="text-red-500 text-sm mt-1">
+                  Please enter your phone number.
+                </p>
+              )}
             </div>
           </div>
 
-          {/* Question/Comment */}
+          {/* QUESTION / COMMENT */}
           <div>
             <label
               className="block text-sm font-semibold mb-2"
@@ -187,7 +220,6 @@ export const ContactForm = () => {
             </label>
             <textarea
               name="question"
-              // The type assertion is needed here because the handleChange function is generic
               onChange={
                 handleChange as React.ChangeEventHandler<HTMLTextAreaElement>
               }
@@ -195,11 +227,10 @@ export const ContactForm = () => {
               placeholder="Enter your question or comment here"
               rows={5}
               className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors resize-none"
-              style={{ borderColor: "rgb(209, 213, 219)", color: darkBlue }}
-              onFocus={(e) => (e.target.style.borderColor = darkBlue)}
-              onBlur={(e) =>
-                (e.target.style.borderColor = "rgb(209, 213, 219)")
-              }
+              style={{
+                borderColor: "rgb(209, 213, 219)",
+                color: darkBlue,
+              }}
             />
           </div>
 
@@ -214,22 +245,21 @@ export const ContactForm = () => {
           {/* Submit Button */}
           <div className="-mt-4">
             <button
-              type="button"
-              onClick={handleSubmit}
+              type="submit"
               className="px-8 py-3 border-2 font-semibold rounded-lg transition-all shadow-md"
               style={{ borderColor: darkBlue, color: darkBlue }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "rgb(243, 244, 246)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "transparent";
-              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = "rgb(243, 244, 246)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = "transparent")
+              }
             >
               SUBMIT
             </button>
           </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 };

@@ -349,7 +349,7 @@ export default function RefillForm() {
               style={{ color: darkBlue }}
             >
               WOULD YOU LIKE US TO NOTIFY YOU WHEN YOUR PRESCRIPTION(S) ARE
-              READY?
+              READY?<span className="text-red-600">*</span>
             </label>
             <select
               name="notification"
