@@ -8,6 +8,7 @@ import { Footer } from "./components/elements/Footer";
 import { Navbar } from "./components/elements/Navbar";
 import { Refill } from "./pages/Refill";
 import { Transfer } from "./pages/Transfer";
+import { AutoRefill } from "./pages/AutoRefill";
 import { ContactInfo } from "./components/sections/ContactInfo";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/refill" element={<Refill />} />
           <Route path="/transfer" element={<Transfer />} />
+          <Route path="/auto-refill" element={<AutoRefill />} />
         </Routes>
       </BrowserRouter>
       <ContactInfo />

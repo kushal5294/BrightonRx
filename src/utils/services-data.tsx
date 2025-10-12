@@ -36,7 +36,7 @@ export const services = [
         className="w-8 h-8"
       />
     ),
-    buttonLink: "/auto-refills",
+    buttonLink: "/auto-refill",
     buttonText: "Schedule",
   },
   {
