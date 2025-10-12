@@ -12,6 +12,9 @@ export const navItems = [
 ];
 
 export const Navbar = () => {
+  // Filter out "About Us" when showing boxes
+  const visibleNavItems = navItems.filter((item) => item.text !== "About Us");
+
   return (
     <header className="z-50 py-6 bg-gray-800 text-white lg:bg-white lg:text-[#175a81]">
       <Container>
@@ -26,17 +29,13 @@ export const Navbar = () => {
           <div className="flex flex-col items-center lg:items-end">
             {/* Nav Items Row */}
             <ul className="w-full flex flex-row flex-wrap justify-center items-center gap-2 text-base list-none">
-              {navItems.map((item, key) => (
+              {visibleNavItems.map((item, key) => (
                 <li
                   key={key}
-                  className={`
-                    inline-flex items-center justify-center whitespace-nowrap rounded-md border border-gray-200 px-2 py-1 hover:bg-gray-700 
-                    lg:border-0 lg:px-0 lg:py-0 lg:hover:bg-transparent
-                    ${item.text === "About Us" ? "!hidden md:!inline-flex" : ""}
-                  `}
+                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md border border-gray-200 px-2 py-1 hover:bg-gray-700 lg:border-0 lg:px-0 lg:py-0 lg:hover:bg-transparent"
                 >
                   <NavItem href={item.href} text={item.text} />
-                  {key < navItems.length - 1 && (
+                  {key < visibleNavItems.length - 1 && (
                     <span className="mx-1 hidden lg:inline">|</span>
                   )}
                 </li>
