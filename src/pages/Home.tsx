@@ -12,10 +12,17 @@ export const Home = () => {
     <>
       <Navbar />
       <Hero />
-      <Brands />
+      <div className="h-16" />
+
       <Services />
+      <div className="h-16" />
+
       <AboutUs />
+      <div className="h-16" />
+
       <Pricing />
+      <div className="h-16" />
+
       <CTA />
       <Footer />
     </>

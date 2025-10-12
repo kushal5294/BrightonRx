@@ -1,62 +1,77 @@
 export const services = [
   {
-    title: "Intelligent Automation",
-    description: "Streamline processes and reduce manual tasks.",
+    title: "Refill Prescription",
+    description: "We can refill your prescription quick and easy.",
     icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth="1.5"
-        stroke="currentColor"
-        className="w-6 h-6"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
-        />
-      </svg>
+      <img
+        src="/assets/logos/refill.svg"
+        alt="Refill Prescription"
+        className="w-8 h-8"
+      />
     ),
+    buttonLink: "/services",
+    buttonText: "Refill Rx",
   },
   {
-    title: "Real‑Time Analytics",
-    description: "Gain actionable insights as events unfold.",
+    title: "Transfer Prescription",
+    description: "Transfer your prescription from your old pharmacy to ours.",
     icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth="1.5"
-        stroke="currentColor"
-        className="w-6 h-6"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
-        />
-      </svg>
+      <img
+        src="/assets/logos/transfer.svg"
+        alt="Transfer Prescription"
+        className="w-9 h-9"
+      />
     ),
+    buttonLink: "/services",
+    buttonText: "Transfer Rx",
   },
   {
-    title: "Predictive Insights",
-    description: " Anticipate trends and mitigate risks before they occur.",
+    title: "Auto Refill",
+    description:
+      "Refilled multiple prescriptions at a particular time each month.",
     icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth="1.5"
-        stroke="currentColor"
-        className="w-6 h-6"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
-        />
-      </svg>
+      <img
+        src="/assets/logos/calendar.svg"
+        alt="Info Logo"
+        className="w-8 h-8"
+      />
     ),
+    buttonLink: "/services",
+    buttonText: "Schedule",
+  },
+  {
+    title: "Delivery Service",
+    description: "Get your prescriptions delivered to your doorstep.",
+    icon: (
+      <img
+        src="/assets/logos/car.svg"
+        alt="Refill Prescription"
+        className="w-12 h-12"
+      />
+    ),
+    buttonLink: "/services",
+    buttonText: "Deliver Rx",
+  },
+  {
+    title: "Pharmacist Consultation",
+    description: "Get expert advice regarding your concerns.",
+    icon: (
+      <img
+        src="/assets/logos/doctor.svg"
+        alt="Transfer Prescription"
+        className="w-14 h-14"
+      />
+    ),
+    buttonLink: "/services",
+    buttonText: "Reach Out",
+  },
+  {
+    title: "More Services",
+    description: "Explore our many services built around your lifestyle.",
+    icon: (
+      <img src="/assets/logos/info.svg" alt="Info Logo" className="w-8 h-8" />
+    ),
+    buttonLink: "/services",
+    buttonText: "Explore",
   },
 ];
