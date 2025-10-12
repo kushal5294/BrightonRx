@@ -5,7 +5,8 @@ import { phone, fax, email, address } from "../../utils/constants";
 
 export const ContactInfo = () => {
   return (
-    <section id="contact-info" className="py-4 md:py-12 -mt-8">
+    <section id="contact-info" className="py-4 md:py-12 -mt-8 mb-8 lg:mb-0">
+      {" "}
       <Container className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
         {/* Left side - Title and content */}
         <div className="w-full flex flex-col justify-center text-center lg:text-left border border-heading-1 rounded-3xl p-6 md:p-8">
