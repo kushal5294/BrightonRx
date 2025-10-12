@@ -3,15 +3,14 @@ import { Service } from "../cards/Service";
 import { Container } from "../shared/Container";
 import { Paragraph } from "../shared/Paragraph";
 import { Title } from "../shared/Title";
-
+import { phone } from "../../utils/constants";
+import { Link } from "react-router-dom";
 export const FullServices = () => {
   return (
     <section id="services" className="mb-13 mt-15">
-      {" "}
       <Container className="space-y-10 md:space-y-12 -mt-4">
-        <div className="text-center  mx-auto space-y-4">
+        <div className="text-center mx-auto space-y-4">
           <Title>
-            {" "}
             Our services are designed to enhance your quality of life.
           </Title>
           <Paragraph>
@@ -22,7 +21,8 @@ export const FullServices = () => {
           </Paragraph>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {/* Center last row items */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 justify-items-center">
           {services.map((service, key) => (
             <Service
               key={key}
@@ -33,6 +33,16 @@ export const FullServices = () => {
               buttonText={service.buttonText}
             />
           ))}
+        </div>
+        <div className="text-center mx-auto space-y-4">
+          <Paragraph>
+            For further details about our services, you may call us at{" "}
+            <strong>{phone}</strong> or{" "}
+            <Link to="/contact-us">
+              <strong>send us a message</strong>
+            </Link>{" "}
+            online.
+          </Paragraph>
         </div>
       </Container>
     </section>

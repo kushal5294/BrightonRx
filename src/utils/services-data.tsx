@@ -32,7 +32,7 @@ export const services = [
     icon: (
       <img
         src="/assets/logos/calendar.svg"
-        alt="Info Logo"
+        alt="calendar icon"
         className="w-8 h-8"
       />
     ),
@@ -43,11 +43,7 @@ export const services = [
     title: "Delivery Service",
     description: "Get your prescriptions delivered to your doorstep.",
     icon: (
-      <img
-        src="/assets/logos/car.svg"
-        alt="Refill Prescription"
-        className="w-8 h-8"
-      />
+      <img src="/assets/logos/car.svg" alt="car icon" className="w-8 h-8" />
     ),
     buttonLink: "/services",
     buttonText: "Deliver",
@@ -58,7 +54,7 @@ export const services = [
     icon: (
       <img
         src="/assets/logos/doctor.svg"
-        alt="Transfer Prescription"
+        alt="pharmacist icon"
         className="w-8 h-8"
       />
     ),

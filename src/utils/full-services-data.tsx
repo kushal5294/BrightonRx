@@ -32,7 +32,7 @@ export const services = [
     icon: (
       <img
         src="/assets/logos/calendar.svg"
-        alt="Info Logo"
+        alt="calendar icon"
         className="w-8 h-8"
       />
     ),
@@ -43,11 +43,7 @@ export const services = [
     title: "Delivery Service",
     description: "Get your prescriptions delivered to your doorstep.",
     icon: (
-      <img
-        src="/assets/logos/car.svg"
-        alt="Refill Prescription"
-        className="w-8 h-8"
-      />
+      <img src="/assets/logos/car.svg" alt="car icon" className="w-8 h-8" />
     ),
     buttonLink: "/services",
     buttonText: "Deliver",
@@ -58,7 +54,7 @@ export const services = [
     icon: (
       <img
         src="/assets/logos/doctor.svg"
-        alt="Transfer Prescription"
+        alt="Pharmacist icon"
         className="w-8 h-8"
       />
     ),
@@ -69,7 +65,11 @@ export const services = [
     title: "Special Packaging",
     description: "Request organized packaging for your prescriptions.",
     icon: (
-      <img src="/assets/logos/org.svg" alt="Info Logo" className="w-8 h-8" />
+      <img
+        src="/assets/logos/org.svg"
+        alt="Packaging icon"
+        className="w-8 h-8"
+      />
     ),
     buttonLink: "/services",
     buttonText: "Request",
@@ -80,11 +80,20 @@ export const services = [
     icon: (
       <img
         src="/assets/logos/vitamin.svg"
-        alt="Info Logo"
+        alt="Vitams icon"
         className="w-8 h-8"
       />
     ),
     buttonLink: "/services",
     buttonText: "Explore",
+  },
+  {
+    title: "Contact Our Team",
+    description: "Reach out directly to our team for assistance.",
+    icon: (
+      <img src="/assets/logos/info.svg" alt="Info icon" className="w-8 h-8" />
+    ),
+    buttonLink: "/contact-us",
+    buttonText: "Contact",
   },
 ];
