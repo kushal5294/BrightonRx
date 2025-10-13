@@ -37,6 +37,23 @@ export default function TransferForm() {
     }));
   };
 
+  const handleDobChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value.replace(/\D/g, "");
+    if (value.length > 8) {
+      value = value.slice(0, 8);
+    }
+    if (value.length > 4) {
+      value = `${value.slice(0, 2)}/${value.slice(2, 4)}/${value.slice(4)}`;
+    } else if (value.length > 2) {
+      value = `${value.slice(0, 2)}/${value.slice(2)}`;
+    }
+
+    setFormData((prev) => ({
+      ...prev,
+      dob: value,
+    }));
+  };
+
   const handlePrescriptionChange = (
     id: number,
     field: "name" | "RxNumber",
@@ -62,7 +79,8 @@ export default function TransferForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     handleFormSubmit({ formData, prescriptions, transferAll });
-  };  return (
+  };
+  return (
     <div className="w-full max-w-4xl mx-auto mb-16 px-4 sm:px-6 md:px-0 -mt-3">
       <div className="bg-white border-2 border-gray-200 rounded-2xl shadow-lg p-6 sm:p-8 md:p-10">
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -167,12 +185,13 @@ export default function TransferForm() {
                   DOB <span className="text-red-600">*</span>
                 </label>
                 <input
-                  type="text"
+                  type="tel"
                   name="dob"
                   value={formData.dob || ""}
-                  onChange={handleChange}
-                  placeholder="Enter date of birth here"
+                  onChange={handleDobChange}
+                  placeholder="MM/DD/YYYY"
                   required
+                  maxLength={10}
                   className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
                   style={{
                     borderColor: "rgb(209, 213, 219)",
