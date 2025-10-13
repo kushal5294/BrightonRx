@@ -9,6 +9,11 @@ interface PrescriptionRow {
   quantity: string;
 }
 
+interface RxNumber {
+  id: number;
+  value: string;
+}
+
 export default function RefillForm() {
   const [formData, setFormData] = useState({
     form: "refill",
@@ -20,7 +25,9 @@ export default function RefillForm() {
     formSubmitted: false,
   });
 
-  const [rxNumbers, setRxNumbers] = useState(["", "", "", ""]);
+  const [rxNumbers, setRxNumbers] = useState<RxNumber[]>([
+    { id: 1, value: "" },
+  ]);
   const [prescriptions, setPrescriptions] = useState<PrescriptionRow[]>([
     { id: 1, name: "", quantity: "" },
   ]);
@@ -35,10 +42,20 @@ export default function RefillForm() {
     }));
   };
 
-  const handleRxChange = (index: number, value: string) => {
-    const newRxNumbers = [...rxNumbers];
-    newRxNumbers[index] = value;
-    setRxNumbers(newRxNumbers);
+  const handleRxChange = (id: number, value: string) => {
+    setRxNumbers((prev) =>
+      prev.map((rx) => (rx.id === id ? { ...rx, value } : rx))
+    );
+  };
+
+  const addRxNumber = () => {
+    const newId =
+      rxNumbers.length > 0 ? Math.max(...rxNumbers.map((p) => p.id)) + 1 : 1;
+    setRxNumbers([...rxNumbers, { id: newId, value: "" }]);
+  };
+
+  const deleteRxNumber = (id: number) => {
+    setRxNumbers((prev) => prev.filter((rx) => rx.id !== id));
   };
 
   const handlePrescriptionChange = (
@@ -62,7 +79,12 @@ export default function RefillForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    handleFormSubmit({ formData, rxNumbers, prescriptions });
+    const rxNumberValues = rxNumbers.map((rx) => rx.value);
+    handleFormSubmit({
+      formData,
+      rxNumbers: rxNumberValues,
+      prescriptions,
+    });
   };
 
   const getBorderStyle = (value: string) => {
@@ -175,18 +197,12 @@ export default function RefillForm() {
               RX REFILL NUMBERS <span className="text-red-600">*</span>
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {rxNumbers.map((value, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <span
-                    className="border-2 font-bold px-4 py-3 rounded-lg text-sm"
-                    style={{ borderColor: darkBlue, color: darkBlue }}
-                  >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+              {rxNumbers.map((rx) => (
+                <div key={rx.id} className="flex items-center gap-3">
                   <input
                     type="text"
-                    value={value}
-                    onChange={(e) => handleRxChange(index, e.target.value)}
+                    value={rx.value}
+                    onChange={(e) => handleRxChange(rx.id, e.target.value)}
                     placeholder="Enter RX refill number here"
                     className="flex-1 px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
                     style={{
@@ -198,11 +214,47 @@ export default function RefillForm() {
                       (e.target.style.borderColor = "rgb(209, 213, 219)")
                     }
                   />
+                  {rxNumbers.length > 1 && (
+                    <button
+                      type="button"
+                      onClick={() => deleteRxNumber(rx.id)}
+                      className="w-12 h-12 flex items-center justify-center border-2 rounded-lg transition-all flex-shrink-0"
+                      style={{
+                        borderColor: "rgb(156, 163, 175)",
+                        color: "rgb(75, 85, 99)",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor =
+                          "rgb(243, 244, 246)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = "transparent";
+                      }}
+                      title="Delete prescription"
+                    >
+                      <Trash2 size={20} />
+                    </button>
+                  )}
                 </div>
               ))}
             </div>
+            <button
+              type="button"
+              onClick={addRxNumber}
+              className="mt-4 flex items-center gap-2 px-6 py-3 border-2 font-semibold rounded-lg transition-all"
+              style={{ borderColor: darkBlue, color: darkBlue }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "rgb(243, 244, 246)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "transparent";
+              }}
+            >
+              <span className="text-xl">+</span>
+              Add Prescription
+            </button>
             {formData.formSubmitted &&
-              !rxNumbers.some((rx) => rx.trim() !== "") && (
+              !rxNumbers.some((rx) => rx.value.trim() !== "") && (
                 <p className="text-red-500 text-sm mt-1">
                   Please enter at least one RX number.
                 </p>
