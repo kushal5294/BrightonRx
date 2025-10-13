@@ -27,6 +27,24 @@ export const BookingForm = () => {
     }));
   };
 
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value.replace(/\D/g, "");
+    if (value.length > 10) {
+      value = value.slice(0, 10);
+    }
+
+    if (value.length > 6) {
+      value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6)}`;
+    } else if (value.length > 3) {
+      value = `(${value.slice(0, 3)}) ${value.slice(3)}`;
+    }
+
+    setFormData((prev) => ({
+      ...prev,
+      phone: value,
+    }));
+  };
+
   const getBorderStyle = (value: string) => {
     if (formData.formSubmitted && !value) return "red";
     return "rgb(209, 213, 219)";
@@ -158,12 +176,13 @@ export const BookingForm = () => {
                 PHONE <span className="text-red-600">*</span>
               </label>
               <input
-                type="tel"
+                type="text"
                 name="phone"
                 value={formData.phone}
-                onChange={handleChange}
-                placeholder="Enter phone here"
+                onChange={handlePhoneChange}
+                placeholder="(XXX) XXX-XXXX"
                 required
+                maxLength={14}
                 className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
                 style={{
                   borderColor: getBorderStyle(formData.phone),

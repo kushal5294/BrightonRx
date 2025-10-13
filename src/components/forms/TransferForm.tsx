@@ -37,6 +37,30 @@ export default function TransferForm() {
     }));
   };
 
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    let formattedValue = value.replace(/\D/g, "");
+    if (formattedValue.length > 10) {
+      formattedValue = formattedValue.slice(0, 10);
+    }
+
+    if (formattedValue.length > 6) {
+      formattedValue = `(${formattedValue.slice(0, 3)}) ${formattedValue.slice(
+        3,
+        6
+      )}-${formattedValue.slice(6)}`;
+    } else if (formattedValue.length > 3) {
+      formattedValue = `(${formattedValue.slice(0, 3)}) ${formattedValue.slice(
+        3
+      )}`;
+    }
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: formattedValue,
+    }));
+  };
+
   const handleDobChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let value = e.target.value.replace(/\D/g, "");
     if (value.length > 8) {
@@ -92,9 +116,6 @@ export default function TransferForm() {
 
           {/* WHO IS THIS PRESCRIPTION FOR? */}
           <div>
-            <h3 className="text-xl font-bold mb-4" style={{ color: darkBlue }}>
-              WHO IS THIS PRESCRIPTION FOR?
-            </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label
@@ -163,9 +184,10 @@ export default function TransferForm() {
                   type="text"
                   name="phone"
                   value={formData.phone || ""}
-                  onChange={handleChange}
-                  placeholder="Enter phone number here"
+                  onChange={handlePhoneChange}
+                  placeholder="(XXX) XXX-XXXX"
                   required
+                  maxLength={14}
                   className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
                   style={{
                     borderColor: "rgb(209, 213, 219)",
@@ -269,9 +291,10 @@ export default function TransferForm() {
                   type="text"
                   name="oldPharmacyPhone"
                   value={formData.oldPharmacyPhone || ""}
-                  onChange={handleChange}
-                  placeholder="Enter pharmacy phone here"
+                  onChange={handlePhoneChange}
+                  placeholder="(XXX) XXX-XXXX"
                   required
+                  maxLength={14}
                   className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
                   style={{
                     borderColor: "rgb(209, 213, 219)",

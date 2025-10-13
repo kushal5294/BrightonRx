@@ -42,6 +42,24 @@ export default function RefillForm() {
     }));
   };
 
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value.replace(/\D/g, "");
+    if (value.length > 10) {
+      value = value.slice(0, 10);
+    }
+
+    if (value.length > 6) {
+      value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6)}`;
+    } else if (value.length > 3) {
+      value = `(${value.slice(0, 3)}) ${value.slice(3)}`;
+    }
+
+    setFormData((prev) => ({
+      ...prev,
+      phone: value,
+    }));
+  };
+
   const handleRxChange = (id: number, value: string) => {
     setRxNumbers((prev) =>
       prev.map((rx) => (rx.id === id ? { ...rx, value } : rx))
@@ -104,9 +122,6 @@ export default function RefillForm() {
 
           {/* WHO IS THIS PRESCRIPTION FOR? */}
           <div>
-            <h3 className="text-xl font-bold mb-4" style={{ color: darkBlue }}>
-              WHO IS THIS PRESCRIPTION FOR?
-            </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label
@@ -172,12 +187,13 @@ export default function RefillForm() {
               PHONE NUMBER <span className="text-red-600">*</span>
             </label>
             <input
-              type="tel"
+              type="text"
               name="phone"
               value={formData.phone}
-              onChange={handleChange}
-              placeholder="Enter phone number here"
+              onChange={handlePhoneChange}
+              placeholder="(XXX) XXX-XXXX"
               required
+              maxLength={14}
               className="w-full md:w-1/2 px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
               style={{
                 borderColor: getBorderStyle(formData.phone),

@@ -28,6 +28,30 @@ export default function ConsultForm() {
     }));
   };
 
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    let formattedValue = value.replace(/\D/g, "");
+    if (formattedValue.length > 10) {
+      formattedValue = formattedValue.slice(0, 10);
+    }
+
+    if (formattedValue.length > 6) {
+      formattedValue = `(${formattedValue.slice(0, 3)}) ${formattedValue.slice(
+        3,
+        6
+      )}-${formattedValue.slice(6)}`;
+    } else if (formattedValue.length > 3) {
+      formattedValue = `(${formattedValue.slice(0, 3)}) ${formattedValue.slice(
+        3
+      )}`;
+    }
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: formattedValue,
+    }));
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     handleFormSubmit({ formData });
@@ -45,9 +69,6 @@ export default function ConsultForm() {
 
           {/* WHO IS THIS PRESCRIPTION FOR? */}
           <div>
-            <h3 className="text-xl font-bold mb-4" style={{ color: darkBlue }}>
-              WHO IS THIS PRESCRIPTION FOR?
-            </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label
@@ -139,9 +160,10 @@ export default function ConsultForm() {
                   type="text"
                   name="phone"
                   value={formData.phone || ""}
-                  onChange={handleChange}
-                  placeholder="Enter phone number here"
+                  onChange={handlePhoneChange}
+                  placeholder="(XXX) XXX-XXXX"
                   required
+                  maxLength={14}
                   className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
                   style={{
                     borderColor: "rgb(209, 213, 219)",
@@ -223,8 +245,9 @@ export default function ConsultForm() {
                   type="text"
                   name="fax"
                   value={formData.fax || ""}
-                  onChange={handleChange}
-                  placeholder="Enter fax here"
+                  onChange={handlePhoneChange}
+                  placeholder="(XXX) XXX-XXXX"
+                  maxLength={14}
                   className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
                   style={{
                     borderColor: "rgb(209, 213, 219)",
@@ -290,17 +313,18 @@ export default function ConsultForm() {
           {/* QUESTION / COMMENT */}
           <div>
             <label
-              className="block text-sm font-semibold mb-2"
+              className="block text-lg font-semibold mb-2"
               style={{ color: darkBlue }}
             >
-              COMMENTS & PREFERENCES
+              MESSAGE OR CONCERN <span className="text-red-600">*</span>
             </label>
             <textarea
               name="question"
               onChange={handleChange}
               value={formData.question}
-              placeholder="Enter your comments or preferences here"
+              placeholder="Enter your message here"
               rows={5}
+              required
               className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors resize-none"
               style={{
                 borderColor: "rgb(209, 213, 219)",
