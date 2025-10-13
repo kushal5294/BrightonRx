@@ -120,18 +120,20 @@ export const Navbar = () => {
           </div>
 
           {/* --- Contact Info for small/medium --- */}
-          <div className="w-full flex flex-col items-center lg:hidden text-[#11b9bf] text-base sm:text-sm gap-2 mt-4">
+          <div className="w-full flex flex-row items-center justify-center lg:hidden text-[#11b9bf] text-base sm:text-sm gap-2 mt-4">
             <div className="flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 8 6"
                 fill="currentColor"
-                className="w-5 h-5 align-middle"
+                className="w-5 h-5 align-middle hidden"
               >
                 <path d="m0 0h8v6h-8zm.75 .75v4.5h6.5v-4.5zM0 0l4 3 4-3v1l-4 3-4-3z" />
               </svg>
               <span>{email}</span>
             </div>
+
+            <span className="mx-2">|</span>
 
             <div className="flex items-center gap-2">
               <svg
@@ -144,7 +146,7 @@ export const Navbar = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="feather feather-phone w-5 h-5 align-middle"
+                className="feather feather-phone w-5 h-5 align-middle hidden"
               >
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
               </svg>
