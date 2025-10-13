@@ -3,10 +3,11 @@ import { useModalStore } from "../store/modalStore";
 
 const jsonToString = (data: any): string => {
   const { formData, prescriptions, rxNumbers, transferAll } = data;
-  let content = `New Form Submission: ${formData.form}\n\n`;
+  let content = "";
 
   switch (formData.form) {
     case "auto-refill":
+      content += `New Auto Refill Form Submission:\n\n`;
       content += `First Name: ${formData.firstName}\n`;
       content += `Last Name: ${formData.lastName}\n`;
       content += `Email: ${formData.email}\n`;
@@ -16,6 +17,7 @@ const jsonToString = (data: any): string => {
       break;
 
     case "booking":
+      content += `New Booking Form Submission:\n\n`;
       content += `First Name: ${formData.firstName}\n`;
       content += `Last Name: ${formData.lastName}\n`;
       content += `Service: ${formData.service}\n`;
@@ -28,6 +30,7 @@ const jsonToString = (data: any): string => {
       break;
 
     case "consult":
+      content += `New Consultation Form Submission:\n\n`;
       content += `First Name: ${formData.firstName}\n`;
       content += `Last Name: ${formData.lastName}\n`;
       content += `Address: ${formData.address}\n`;
@@ -46,6 +49,7 @@ const jsonToString = (data: any): string => {
       break;
 
     case "contact":
+      content += `New Contact Form Submission:\n\n`;
       content += `First Name: ${formData.firstName}\n`;
       content += `Last Name: ${formData.lastName}\n`;
       content += `Address: ${formData.address}\n`;
@@ -57,6 +61,7 @@ const jsonToString = (data: any): string => {
       break;
 
     case "delivery":
+      content += `New Delivery Form Submission:\n\n`;
       content += `First Name: ${formData.firstName}\n`;
       content += `Last Name: ${formData.lastName}\n`;
       content += `Email: ${formData.email}\n`;
@@ -68,6 +73,7 @@ const jsonToString = (data: any): string => {
       break;
 
     case "refill":
+      content += `New Prescription Refill Form Submission:\n\n`;
       content += `First Name: ${formData.firstName}\n`;
       content += `Last Name: ${formData.lastName}\n`;
       content += `Phone: ${formData.phone}\n`;
@@ -90,6 +96,7 @@ const jsonToString = (data: any): string => {
       break;
 
     case "transfer":
+      content += `New Prescription Transfer Form Submission:\n\n`;
       content += `First Name: ${formData.firstName}\n`;
       content += `Last Name: ${formData.lastName}\n`;
       content += `Phone: ${formData.phone}\n`;
