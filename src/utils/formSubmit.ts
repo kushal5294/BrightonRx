@@ -133,7 +133,7 @@ const sendEmail = async (data: any) => {
 
   try {
     await axios.post(
-      "https://formsubmit.co/f9c90ef5ba9e73862b7d704190035286",
+      "https://formsubmit.co/43c429ea852577b4bd5e995854cff7a2",
       formSubmitData
     );
 
