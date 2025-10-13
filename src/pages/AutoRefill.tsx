@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Container } from "../components/shared/Container";
 import { Paragraph } from "../components/shared/Paragraph";
 import { Banner } from "../components/elements/Banner";
@@ -7,6 +8,13 @@ import { darkBlue } from "../utils/constants";
 export const AutoRefill = () => {
   return (
     <>
+      <Helmet>
+        <title>Auto Refills - Brighton Rx</title>
+        <meta
+          name="description"
+          content="Set up automatic prescription refills at Brighton Rx. Save time and avoid multiple trips to the pharmacy with our convenient auto-refill service."
+        />
+      </Helmet>
       <Banner text="Auto Refills" />
       <section id="services" className="mb-13 mt-15">
         <Container className="space-y-10 md:space-y-12 -mt-4">

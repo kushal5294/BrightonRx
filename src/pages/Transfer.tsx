@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Container } from "../components/shared/Container";
 import { Paragraph } from "../components/shared/Paragraph";
 import { Banner } from "../components/elements/Banner";
@@ -7,6 +8,13 @@ import TransferForm from "../components/forms/TransferForm";
 export const Transfer = () => {
   return (
     <>
+      <Helmet>
+        <title>Transfer Prescription - Brighton Rx</title>
+        <meta
+          name="description"
+          content="Easily transfer your prescription to Brighton Rx from another pharmacy. Fill out our simple form and we'll handle the rest."
+        />
+      </Helmet>
       <Banner text="Transfer Prescription" />
       <section id="services" className="mb-13 mt-15">
         <Container className="space-y-10 md:space-y-12 -mt-4">

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Container } from "../components/shared/Container";
 import { Paragraph } from "../components/shared/Paragraph";
 import { Banner } from "../components/elements/Banner";
@@ -6,6 +7,13 @@ import RefillForm from "../components/forms/RefillForm";
 export const Refill = () => {
   return (
     <>
+      <Helmet>
+        <title>Refill Prescription - Brighton Rx</title>
+        <meta
+          name="description"
+          content="Quickly and easily refill your prescription online at Brighton Rx. Fill out our simple form to have your medication ready for you."
+        />
+      </Helmet>
       <Banner text="Refill Prescription" />
       <section id="services" className="mb-13 mt-15">
         <Container className="space-y-10 md:space-y-12 -mt-4">

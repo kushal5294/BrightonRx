@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Banner } from "../components/elements/Banner";
 import { BookingForm } from "../components/forms/BookingForm";
 import { Container } from "../components/shared/Container";
@@ -7,6 +8,13 @@ import { darkBlue } from "../utils/constants";
 export const Booking = () => {
   return (
     <>
+      <Helmet>
+        <title>Book an Appointment - Brighton Rx</title>
+        <meta
+          name="description"
+          content="Schedule your vaccination appointment at Brighton Rx. Use our simple online form to request a date and time that works for you."
+        />
+      </Helmet>
       <Banner text="Book An Appointment" />
       <section id="services" className="mb-13 mt-15">
         <Container className="space-y-10 md:space-y-12 -mt-4">

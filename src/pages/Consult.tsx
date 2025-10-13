@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Container } from "../components/shared/Container";
 import { Paragraph } from "../components/shared/Paragraph";
 import { Banner } from "../components/elements/Banner";
@@ -7,6 +8,13 @@ import ConsultForm from "../components/forms/ConsultForm";
 export const Consult = () => {
   return (
     <>
+      <Helmet>
+        <title>Talk to a Pharmacist - Brighton Rx</title>
+        <meta
+          name="description"
+          content="Have questions about your medication? Schedule a consultation with an expert pharmacist at Brighton Rx for professional health advice."
+        />
+      </Helmet>
       <Banner text="Talk To Our Pharmacist" />
       <section id="services" className="mb-13 mt-15">
         <Container className="space-y-10 md:space-y-12 -mt-4">
