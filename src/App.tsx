@@ -14,6 +14,7 @@ import { Consult } from "./pages/Consult";
 import { SpecialPackage } from "./pages/SpecialPackage";
 import { VitaminsAndSupplements } from "./pages/VitaminsSups";
 import { ContactInfo } from "./components/sections/ContactInfo";
+import { StatusModal } from "./components/shared/StatusModal";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
       </BrowserRouter>
       <ContactInfo />
       <Footer />
+      <StatusModal />
     </div>
   );
 }

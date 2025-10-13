@@ -1,22 +1,21 @@
 import axios from "axios";
+import { useModalStore } from "../store/modalStore";
 
 const jsonToString = (data: any): string => {
   const { formData, prescriptions, rxNumbers, transferAll } = data;
-  let content = "";
+  let content = `New Form Submission: ${formData.form}\n\n`;
 
   switch (formData.form) {
     case "auto-refill":
-      content += `New Automatic Refill Form Submission:\n\n`;
       content += `First Name: ${formData.firstName}\n`;
       content += `Last Name: ${formData.lastName}\n`;
       content += `Email: ${formData.email}\n`;
       content += `Phone: ${formData.phone}\n`;
       content += `Auto-Refill: ${formData.autoRefill ? "Yes" : "No"}\n`;
-      content += `Preferred Notification: ${formData.notification}\n`;
+      content += `Notification: ${formData.notification}\n`;
       break;
 
     case "booking":
-      content += `New Booking Form Submission:\n\n`;
       content += `First Name: ${formData.firstName}\n`;
       content += `Last Name: ${formData.lastName}\n`;
       content += `Service: ${formData.service}\n`;
@@ -29,7 +28,6 @@ const jsonToString = (data: any): string => {
       break;
 
     case "consult":
-      content += `New Consultation Form Submission:\n\n`;
       content += `First Name: ${formData.firstName}\n`;
       content += `Last Name: ${formData.lastName}\n`;
       content += `Address: ${formData.address}\n`;
@@ -48,7 +46,6 @@ const jsonToString = (data: any): string => {
       break;
 
     case "contact":
-      content += `New Contact Form Submission:\n\n`;
       content += `First Name: ${formData.firstName}\n`;
       content += `Last Name: ${formData.lastName}\n`;
       content += `Address: ${formData.address}\n`;
@@ -60,7 +57,6 @@ const jsonToString = (data: any): string => {
       break;
 
     case "delivery":
-      content += `New Delivery Form Submission:\n\n`;
       content += `First Name: ${formData.firstName}\n`;
       content += `Last Name: ${formData.lastName}\n`;
       content += `Email: ${formData.email}\n`;
@@ -68,16 +64,15 @@ const jsonToString = (data: any): string => {
       content += `Free Pick-up and Delivery: ${
         formData.delivery ? "Yes" : "No"
       }\n`;
-      content += `Preferred Notification: ${formData.notification}\n`;
+      content += `Notification: ${formData.notification}\n`;
       break;
 
     case "refill":
-      content += `New Refill Form Submission:\n\n`;
       content += `First Name: ${formData.firstName}\n`;
       content += `Last Name: ${formData.lastName}\n`;
       content += `Phone: ${formData.phone}\n`;
       content += `Pickup/Delivery: ${formData.pickupMethod}\n`;
-      content += `Preferred Notification: ${formData.notification}\n\n`;
+      content += `Notification: ${formData.notification}\n\n`;
       if (rxNumbers && rxNumbers.length > 0) {
         content += "RX Refill Numbers:\n";
         rxNumbers.forEach((rx: string, index: number) => {
@@ -95,7 +90,6 @@ const jsonToString = (data: any): string => {
       break;
 
     case "transfer":
-      content += `New Transfer Form Submission:\n\n`;
       content += `First Name: ${formData.firstName}\n`;
       content += `Last Name: ${formData.lastName}\n`;
       content += `Phone: ${formData.phone}\n`;
@@ -135,13 +129,24 @@ const sendEmail = async (data: any) => {
   };
 
   try {
-    const response = await axios.post(
+    await axios.post(
       "https://api.emailjs.com/api/v1.0/email/send",
       emailJsData
     );
-    console.log("EmailJS response:", response.data);
+    useModalStore.getState().openModal({
+      title: "Submission Recieved",
+      message:
+        "Thank you for your submission. We will get back to you shortly.",
+      status: "success",
+    });
   } catch (error) {
     console.error("Error sending email via EmailJS:", error);
+    useModalStore.getState().openModal({
+      title: "Submission Failed",
+      message:
+        "There was an error submitting your form. Please try again later.",
+      status: "error",
+    });
   }
 };
 
