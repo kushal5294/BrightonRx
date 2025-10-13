@@ -124,30 +124,26 @@ const jsonToString = (data: any): string => {
 
 const sendEmail = async (data: any) => {
   const emailContent = jsonToString(data);
-  const emailJsData = {
-    service_id: "service_jbd4o5n",
-    template_id: "template_tgttlbm",
-    user_id: "lrIHvC2cp1wPpOX81",
-    template_params: {
-      first_name: data.formData.firstName,
-      last_name: data.formData.lastName,
-      form_data: emailContent,
-    },
+
+  const formSubmitData = {
+    message: emailContent,
+    _subject: `[Action Required] Online Submission From ${data.formData.firstName} ${data.formData.lastName}`,
+    _captcha: "false",
   };
 
   try {
     await axios.post(
-      "https://api.emailjs.com/api/v1.0/email/send",
-      emailJsData
+      "https://formsubmit.co/f9c90ef5ba9e73862b7d704190035286",
+      formSubmitData
     );
+
     useModalStore.getState().openModal({
-      title: "Submission Recieved",
+      title: "Submission Received",
       message:
         "Thank you for your submission. We will get back to you shortly.",
       status: "success",
     });
   } catch (error) {
-    console.error("Error sending email via EmailJS:", error);
     useModalStore.getState().openModal({
       title: "Submission Failed",
       message:
@@ -159,7 +155,7 @@ const sendEmail = async (data: any) => {
 
 //@ts-expect-error
 export const handleFormSubmit = (formData: any) => {
-  console.log("Form submitted:", formData.formData.form);
-  console.log(formData);
+  // console.log("Form submitted:", formData.formData.form);
+  // console.log(formData);
   sendEmail(formData);
 };
