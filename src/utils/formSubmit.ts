@@ -81,7 +81,7 @@ const jsonToString = (data: any): string => {
       content += `Notification: ${formData.notification}\n\n`;
       if (rxNumbers && rxNumbers.length > 0) {
         content += "RX Refill Numbers:\n";
-        rxNumbers.forEach((rx: string, index: number) => {
+        rxNumbers.forEach((rx: string) => {
           if (rx) content += `  - ${rx}\n`;
         });
         content += "\n";
@@ -153,7 +153,6 @@ const sendEmail = async (data: any) => {
   }
 };
 
-//@ts-expect-error
 export const handleFormSubmit = (formData: any) => {
   // console.log("Form submitted:", formData.formData.form);
   // console.log(formData);
