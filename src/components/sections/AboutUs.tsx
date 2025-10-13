@@ -11,9 +11,9 @@ export const AboutUsComp = () => {
         <div className="w-full md:w-5/12 lg:w-1/2">
           <div className="w-full h-80 sm:h-96 relative">
             <img
-              src="https://images.pexels.com/photos/8728381/pexels-photo-8728381.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              src="https://t3.ftcdn.net/jpg/03/46/13/66/360_F_346136609_CY4flRGvi4dA9el5T1Wrq3nuBUYuyWm1.jpg"
               className="w-full h-full object-cover rounded-3xl shadow-lg relative z-10"
-              alt="About Our Mission"
+              alt="Image of a happy family."
             />
           </div>
         </div>

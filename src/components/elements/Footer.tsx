@@ -20,14 +20,18 @@ export const Footer = () => {
       <Container className="pb-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex flex-col items-center gap-3 mb-4 md:mb-0">
-            <img src={logo} className="w-60" alt="Brighton Rx Logo" />
-            <div className="text-[#11b9bf] text-base lg:text-heading-1">
+            <img
+              src={logo}
+              className="w-60 lg:w-80"
+              alt="Brighton Rx Pharmacy Logo"
+            />
+            <div className="text-[#11b9bf] text-base lg:text-base">
               © Brighton Rx 2025
             </div>
           </div>
 
           <div className="flex flex-col items-center">
-            <ul className="flex flex-wrap justify-center items-center text-base list-none text-[#11b9bf] lg:text-heading-1">
+            <ul className="flex flex-wrap justify-center items-center text-base lg:text-lg list-none text-[#11b9bf]">
               {navItems.map((item, key) => {
                 const isAboutUs =
                   item.text.toLowerCase() === "about us" ||
@@ -55,7 +59,7 @@ export const Footer = () => {
               })}
             </ul>
 
-            <ul className="flex flex-wrap justify-center items-center text-base list-none text-[#11b9bf] lg:text-heading-1">
+            <ul className="flex flex-wrap justify-center items-center text-base lg:text-lg list-none text-[#11b9bf]">
               {[
                 { href: "#", text: "Hippa Notice" },
                 { href: "#", text: "Notice of Privacy Practices" },

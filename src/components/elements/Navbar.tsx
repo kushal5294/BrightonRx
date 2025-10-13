@@ -25,7 +25,7 @@ export const Navbar = () => {
             <a href="/" className="flex-shrink-0 flex items-center">
               <img
                 src={logo}
-                alt="Brighton Rx Logo"
+                alt="Brighton Rx Pharmacy Logo"
                 className="w-60 sm:w-75" // smaller on small screens
               />
             </a>

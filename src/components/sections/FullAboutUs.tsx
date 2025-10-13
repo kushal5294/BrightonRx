@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export const FullAboutUs = () => {
   return (
-    <section id="services" className="mb-13 mt-15">
+    <section id="services" className="mb-13 mt-8">
       <Container className="space-y-10 md:space-y-12 -mt-4">
         <div className=" p-6 rounded-xl text-center mx-auto space-y-4 ">
           <Title>
@@ -15,7 +15,7 @@ export const FullAboutUs = () => {
           </Title>
         </div>
 
-        <Container className="flex flex-col md:flex-row gap-10 lg:gap-12">
+        <Container className="flex flex-col md:flex-row gap-10 lg:gap-12 -mt-7">
           <div className="w-full md:w-1/3">
             <div className="bg-[#175a81] text-white p-8 rounded-2xl shadow-lg h-full flex flex-col justify-center text-center md:text-left w-full lg:w-auto">
               <h3 className="text-2xl font-bold mb-4">Our Mission Statement</h3>
@@ -27,7 +27,7 @@ export const FullAboutUs = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-2/3 flex flex-col space-y-6 text-center md:text-left">
+          <div className="w-full md:w-2/3 flex flex-col space-y-6 text-center md:text-left -mb-11">
             <Title> About Brighton Rx Pharmacy </Title>
 
             <div className="space-y-4">
