@@ -120,7 +120,7 @@ export const Navbar = () => {
           </div>
 
           {/* --- Contact Info for small/medium --- */}
-          <div className="w-full flex flex-row items-center justify-center lg:hidden text-[#175a81] text-base sm:text-sm gap-2 mt-4">
+          <div className="w-full flex flex-row items-center justify-center lg:hidden text-[#175a81] text-base sm:text-sm gap-2">
             <div className="flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -29,7 +29,9 @@ export const Footer = () => {
           <div className="flex flex-col items-center">
             <ul className="flex flex-wrap justify-center items-center text-base list-none text-[#11b9bf] lg:text-heading-1">
               {navItems.map((item, key) => {
-                const isAboutUs = item.text.toLowerCase() === "about us";
+                const isAboutUs =
+                  item.text.toLowerCase() === "about us" ||
+                  item.text.toLowerCase() === "booking";
                 const isLastItem = key === navItems.length - 1;
 
                 return (

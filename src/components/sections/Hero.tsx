@@ -3,7 +3,7 @@ import { Paragraph } from "../shared/Paragraph";
 
 export const Hero = () => {
   return (
-    <section className="relative pt-5 lg:pt-10 mt-4">
+    <section className="relative pt-5 lg:pt-10 -mt-4 lg:mt-4">
       <Container className="flex flex-col lg:flex-row gap-10 lg:gap-12">
         {/* Text section */}
         <div
