@@ -16,7 +16,9 @@ export const BookingForm = () => {
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -33,7 +35,14 @@ export const BookingForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormData((prev) => ({ ...prev, formSubmitted: true }));
-    if (formData.firstName && formData.lastName && formData.service && formData.phone && formData.date && formData.time) {
+    if (
+      formData.firstName &&
+      formData.lastName &&
+      formData.service &&
+      formData.phone &&
+      formData.date &&
+      formData.time
+    ) {
       handleFormSubmit({ formData });
     }
   };
@@ -56,6 +65,8 @@ export const BookingForm = () => {
     }
     return slots;
   };
+
+  const today = new Date().toISOString().split("T")[0];
 
   return (
     <form
@@ -215,6 +226,7 @@ export const BookingForm = () => {
                   value={formData.date}
                   onChange={handleChange}
                   required
+                  min={today}
                   className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
                   style={{
                     borderColor: getBorderStyle(formData.date),
