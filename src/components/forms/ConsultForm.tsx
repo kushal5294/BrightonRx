@@ -187,7 +187,7 @@ export default function ConsultForm() {
                   value={formData.bestTimeToCall}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors bg-white"
+                  className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors bg-white appearance-none"
                   style={{
                     borderColor: "rgb(209, 213, 219)",
                     color: darkBlue,

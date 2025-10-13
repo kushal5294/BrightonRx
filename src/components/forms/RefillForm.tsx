@@ -442,7 +442,7 @@ export default function RefillForm() {
               name="notification"
               value={formData.notification}
               onChange={handleChange}
-              className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors bg-white"
+              className="appearance-none w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors bg-white"
               style={{
                 borderColor: getBorderStyle(formData.notification),
                 color: darkBlue,

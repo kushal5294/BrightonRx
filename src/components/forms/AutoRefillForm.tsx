@@ -210,7 +210,7 @@ export const AutoRefillForm = () => {
               value={formData.notification}
               onChange={handleChange}
               required
-              className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors bg-white ${
+              className={` appearance-none w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors bg-white ${
                 !formData.notification && formData.formSubmitted
                   ? "border-red-500"
                   : ""

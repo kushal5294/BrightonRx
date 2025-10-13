@@ -209,7 +209,7 @@ export const BookingForm = () => {
                 value={formData.service}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors bg-white"
+                className="appearance-none w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors bg-white"
                 style={{
                   borderColor: getBorderStyle(formData.service),
                   color: darkBlue,
@@ -271,7 +271,7 @@ export const BookingForm = () => {
                     value={formData.time}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors bg-white"
+                    className="appearance-none w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors bg-white"
                     style={{
                       borderColor: getBorderStyle(formData.time),
                       color: darkBlue,
