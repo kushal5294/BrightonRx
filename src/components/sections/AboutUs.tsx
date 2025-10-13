@@ -10,6 +10,13 @@ export const AboutUsComp = () => {
       <Container className="flex flex-col md:flex-row gap-10 lg:gap-12 items-center -mb-4">
         <div className="w-full md:w-5/12 lg:w-1/2">
           <div className="w-full h-80 sm:h-96 relative">
+            <span
+            className="absolute inset-0 rounded-3xl blur-[60px] opacity-40"
+            style={{
+              background:
+                "radial-gradient(circle at center, #199ca0, #12a89d 40%, #185b81 70%, transparent 100%)",
+            }}
+          ></span>
             <img
               src="https://t3.ftcdn.net/jpg/03/46/13/66/360_F_346136609_CY4flRGvi4dA9el5T1Wrq3nuBUYuyWm1.jpg"
               className="w-full h-full object-cover rounded-3xl shadow-lg relative z-10"
