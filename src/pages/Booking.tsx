@@ -12,13 +12,13 @@ export const Booking = () => {
         <Container className="space-y-10 md:space-y-12 -mt-4">
           <div className="text-center mx-auto space-y-4">
             <Paragraph>
+              Your health is our priority at{" "}
               <span style={{ color: darkBlue }} className="font-bold">
                 Brighton Rx Pharmacy
-              </span>{" "}
-              cares about you. If you have any questions, concerns, or
-              suggestions, we encourage you to send us a message using the form
-              provided. One of our representatives will get back to you as soon
-              as possible.
+              </span>
+              . Please use the form below to request your vaccination
+              appointment. After you submit your details, a member of our team
+              will contact you to confirm your date and time.
             </Paragraph>
           </div>
         </Container>

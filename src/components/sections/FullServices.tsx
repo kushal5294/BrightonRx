@@ -27,7 +27,7 @@ export const FullServices = () => {
             <div
               key={key}
               className={
-                service.title === "Contact Our Team" ? "hidden md:block" : ""
+                service.title === "Contact Our Team" ? "hidden lg:block" : ""
               }
             >
               <Service
