@@ -24,14 +24,20 @@ export const FullServices = () => {
         {/* Center last row items */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 justify-items-center">
           {services.map((service, key) => (
-            <Service
+            <div
               key={key}
-              title={service.title}
-              description={service.description}
-              icon={service.icon}
-              buttonLink={service.buttonLink}
-              buttonText={service.buttonText}
-            />
+              className={
+                service.title === "Contact Our Team" ? "hidden md:block" : ""
+              }
+            >
+              <Service
+                title={service.title}
+                description={service.description}
+                icon={service.icon}
+                buttonLink={service.buttonLink}
+                buttonText={service.buttonText}
+              />
+            </div>
           ))}
         </div>
         <div className="text-center mx-auto space-y-4 max-w-2xl -mb-8">

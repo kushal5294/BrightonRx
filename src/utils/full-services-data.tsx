@@ -26,6 +26,19 @@ export const services = [
     buttonText: "Transfer",
   },
   {
+    title: "Book An Appointment",
+    description: "Schedule an appointment to receive a vaccine.",
+    icon: (
+      <img
+        src="/assets/logos/needle.svg"
+        alt="needle icon"
+        className="w-8 h-8"
+      />
+    ),
+    buttonLink: "/booking",
+    buttonText: "Book",
+  },
+  {
     title: "Automatic Refill",
     description:
       "Refilled multiple prescriptions at a particular time each month.",

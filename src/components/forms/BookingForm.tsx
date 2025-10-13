@@ -281,7 +281,7 @@ export const BookingForm = () => {
               className="block text-sm font-semibold mb-2"
               style={{ color: darkBlue }}
             >
-              QUESTION / COMMENT
+              COMMENTS / PREFERENCES
             </label>
             <textarea
               name="question"
@@ -289,7 +289,7 @@ export const BookingForm = () => {
                 handleChange as React.ChangeEventHandler<HTMLTextAreaElement>
               }
               value={formData.question}
-              placeholder="Enter your question or comment here"
+              placeholder="Enter your comments or preferences here"
               rows={5}
               className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors resize-none"
               style={{
