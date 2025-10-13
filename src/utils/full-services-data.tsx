@@ -72,7 +72,7 @@ export const services = [
       />
     ),
     buttonLink: "/special-packaging",
-    buttonText: "Request",
+    buttonText: "Explore",
   },
   {
     title: "Vitamins & Supplements",
