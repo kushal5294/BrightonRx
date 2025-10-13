@@ -16,7 +16,7 @@ export const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <header className="z-50 py-6 bg-gray-800 text-white lg:bg-white lg:text-[#175a81]">
+    <header className="z-50 py-6 bg-white text-[#175a81]">
       <Container>
         <nav className="w-full flex flex-col lg:flex-row lg:items-start lg:justify-between">
           {/* --- Top Row: Logo + Dropdown / Nav Links --- */}
@@ -34,7 +34,7 @@ export const Navbar = () => {
             <div className="lg:hidden relative mt-4">
               <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}
-                className="flex items-center gap-2 px-3 py-2 border border-[#11b9bf] rounded-md text-[#11b9bf]"
+                className="flex items-center gap-2 px-3 py-2 border border-[#175a81] rounded-md text-[#175a81]"
               >
                 {/* Hamburger icon */}
                 <span className="flex flex-col justify-between w-5 h-4">
@@ -45,19 +45,19 @@ export const Navbar = () => {
               </button>
 
               {dropdownOpen && (
-                <ul className="absolute right-0 mt-2 w-40 bg-gray-700 rounded-md shadow-lg overflow-hidden z-50">
+                <ul className="absolute right-0 mt-2 w-40 bg-[#175a81] rounded-md shadow-lg overflow-hidden z-50">
                   {navItems.map((item, key) => (
                     <li
                       key={key}
                       className={`border-b ${
                         key === navItems.length - 1
                           ? "border-transparent"
-                          : "border-[#11b9bf]"
-                      } hover:bg-gray-600`}
+                          : "border-white"
+                      } hover:bg-[#114d6e]`}
                     >
                       <a
                         href={item.href}
-                        className="block px-4 py-2 whitespace-nowrap text-[#11b9bf]"
+                        className="block px-4 py-2 whitespace-nowrap text-white"
                         onClick={() => setDropdownOpen(false)}
                       >
                         {item.text}
@@ -120,7 +120,7 @@ export const Navbar = () => {
           </div>
 
           {/* --- Contact Info for small/medium --- */}
-          <div className="w-full flex flex-row items-center justify-center lg:hidden text-[#11b9bf] text-base sm:text-sm gap-2 mt-4">
+          <div className="w-full flex flex-row items-center justify-center lg:hidden text-[#175a81] text-base sm:text-sm gap-2 mt-4">
             <div className="flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
