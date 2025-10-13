@@ -19,11 +19,14 @@ export const Footer = () => {
       `}</style>
       <Container className="pb-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center gap-3 mb-4 md:mb-0">
+          <div className="flex flex-col items-center gap-3 mb-4 md:mb-0">
             <img src={logo} className="w-60" alt="Brighton Rx Logo" />
+            <div className="text-[#11b9bf] text-base lg:text-heading-1">
+              © Brighton Rx 2025
+            </div>
           </div>
 
-          <div className="flex flex-col items-center gap-1">
+          <div className="flex flex-col items-center">
             <ul className="flex flex-wrap justify-center items-center text-base list-none text-[#11b9bf] lg:text-heading-1">
               {navItems.map((item, key) => {
                 const isAboutUs = item.text.toLowerCase() === "about us";
@@ -65,10 +68,6 @@ export const Footer = () => {
                 </React.Fragment>
               ))}
             </ul>
-
-            <div className="text-[#11b9bf] text-base mt-1">
-              Copyright Brighton Rx 2025
-            </div>
           </div>
         </div>
       </Container>
