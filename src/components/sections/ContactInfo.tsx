@@ -1,7 +1,7 @@
 import { Container } from "../shared/Container";
 import { Paragraph } from "../shared/Paragraph";
 import { Title } from "../shared/Title";
-import { fax, email, address } from "../../utils/constants";
+import { email, address } from "../../utils/constants";
 
 export const ContactInfo = () => {
   return (

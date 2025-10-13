@@ -12,7 +12,7 @@ const jsonToString = (data: any): string => {
       content += `Email: ${formData.email}\n`;
       content += `Phone: ${formData.phone}\n`;
       content += `Auto-Refill: ${formData.autoRefill ? "Yes" : "No"}\n`;
-      content += `Notification: ${formData.notification}\n`;
+      content += `Preferred Notification: ${formData.notification}\n`;
       break;
 
     case "booking":
@@ -68,7 +68,7 @@ const jsonToString = (data: any): string => {
       content += `Free Pick-up and Delivery: ${
         formData.delivery ? "Yes" : "No"
       }\n`;
-      content += `Notification: ${formData.notification}\n`;
+      content += `Preferred Notification: ${formData.notification}\n`;
       break;
 
     case "refill":
@@ -77,7 +77,7 @@ const jsonToString = (data: any): string => {
       content += `Last Name: ${formData.lastName}\n`;
       content += `Phone: ${formData.phone}\n`;
       content += `Pickup/Delivery: ${formData.pickupMethod}\n`;
-      content += `Notification: ${formData.notification}\n\n`;
+      content += `Preferred Notification: ${formData.notification}\n\n`;
       if (rxNumbers && rxNumbers.length > 0) {
         content += "RX Refill Numbers:\n";
         rxNumbers.forEach((rx: string, index: number) => {
