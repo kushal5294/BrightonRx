@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { darkBlue } from "../../utils/constants";
+import { handleFormSubmit } from "../../utils/formSubmit";
 
 export const AutoRefillForm = () => {
   const [formData, setFormData] = useState({
@@ -27,16 +28,7 @@ export const AutoRefillForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    setFormData((prev) => ({ ...prev, formSubmitted: true }));
-
-    // Simple validation for notification
-    if (!formData.notification) {
-      return; // show red border and error message
-    }
-
-    // If valid, handle form submission
-    console.log("Form submitted:", formData);
+    handleFormSubmit({ formData });
   };
 
   return (

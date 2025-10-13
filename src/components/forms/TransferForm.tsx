@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Trash2 } from "lucide-react";
 import { darkBlue } from "../../utils/constants";
+import { handleFormSubmit } from "../../utils/formSubmit";
 
 interface PrescriptionRow {
   id: number;
@@ -60,10 +61,8 @@ export default function TransferForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", { formData, prescriptions, transferAll });
-  };
-
-  return (
+    handleFormSubmit({ formData, prescriptions, transferAll });
+  };  return (
     <div className="w-full max-w-4xl mx-auto mb-16 px-4 sm:px-6 md:px-0 -mt-3">
       <div className="bg-white border-2 border-gray-200 rounded-2xl shadow-lg p-6 sm:p-8 md:p-10">
         <form onSubmit={handleSubmit} className="space-y-6">

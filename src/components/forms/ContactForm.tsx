@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { darkBlue } from "../../utils/constants";
+import { handleFormSubmit } from "../../utils/formSubmit";
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -23,25 +24,14 @@ export const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormData((prev) => ({ ...prev, formSubmitted: true }));
-
-    const { firstName, lastName, address, email, phone } = formData;
-
-    // Check required fields
-    if (!firstName || !lastName || !address || !email || !phone) {
-      return;
-    }
-
-    // ✅ All valid — proceed
-    console.log("Form submitted:", formData);
-  };
-
-  // Helper to style invalid fields
   const getBorderStyle = (value: string) => {
     if (formData.formSubmitted && !value) return "red";
     return "rgb(209, 213, 219)";
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    handleFormSubmit({ formData });
   };
 
   return (

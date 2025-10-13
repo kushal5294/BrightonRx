@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { darkBlue } from "../../utils/constants";
+import { handleFormSubmit } from "../../utils/formSubmit";
 
 export default function ConsultForm() {
   const [formData, setFormData] = useState({
@@ -10,14 +11,15 @@ export default function ConsultForm() {
     email: "",
     fax: "",
     bestTimeToCall: "",
-    contactMethod: "",
+    contactMethod: "phone",
     address: "",
-    oldPharmacyName: "",
-    oldPharmacyPhone: "",
+    question: "",
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -28,7 +30,7 @@ export default function ConsultForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", { formData });
+    handleFormSubmit({ formData });
   };
 
   return (
@@ -123,7 +125,7 @@ export default function ConsultForm() {
             />
           </div>
 
-          {/* PHONE NUMBER & DOB */}
+          {/* PHONE NUMBER & BEST TIME TO CALL */}
           <div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
@@ -158,14 +160,12 @@ export default function ConsultForm() {
                 >
                   BEST TIME TO CALL <span className="text-red-600">*</span>
                 </label>
-                <input
-                  type="text"
+                <select
                   name="bestTimeToCall"
-                  value={formData.bestTimeToCall || ""}
+                  value={formData.bestTimeToCall}
                   onChange={handleChange}
-                  placeholder="Enter best time here"
                   required
-                  className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors bg-white"
                   style={{
                     borderColor: "rgb(209, 213, 219)",
                     color: darkBlue,
@@ -174,7 +174,13 @@ export default function ConsultForm() {
                   onBlur={(e) =>
                     (e.target.style.borderColor = "rgb(209, 213, 219)")
                   }
-                />
+                >
+                  <option value="">- Please Select -</option>
+                  <option value="Anytime">Anytime</option>
+                  <option value="Morning">Morning</option>
+                  <option value="Afternoon">Afternoon</option>
+                  <option value="Evening">Evening</option>
+                </select>
               </div>
             </div>
           </div>
@@ -195,7 +201,6 @@ export default function ConsultForm() {
                   value={formData.email || ""}
                   onChange={handleChange}
                   placeholder="Enter email here"
-                  required
                   className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
                   style={{
                     borderColor: "rgb(209, 213, 219)",
@@ -220,7 +225,6 @@ export default function ConsultForm() {
                   value={formData.fax || ""}
                   onChange={handleChange}
                   placeholder="Enter fax here"
-                  required
                   className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
                   style={{
                     borderColor: "rgb(209, 213, 219)",
@@ -235,7 +239,7 @@ export default function ConsultForm() {
             </div>
           </div>
 
-          {/* PICK UP OR DELIVERY */}
+          {/* CONTACT METHOD */}
           <div>
             <label
               className="block text-lg font-semibold mb-3"
@@ -283,9 +287,29 @@ export default function ConsultForm() {
               </label>
             </div>
           </div>
-
+          {/* QUESTION / COMMENT */}
+          <div>
+            <label
+              className="block text-sm font-semibold mb-2"
+              style={{ color: darkBlue }}
+            >
+              COMMENTS & PREFERENCES
+            </label>
+            <textarea
+              name="question"
+              onChange={handleChange}
+              value={formData.question}
+              placeholder="Enter your comments or preferences here"
+              rows={5}
+              className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors resize-none"
+              style={{
+                borderColor: "rgb(209, 213, 219)",
+                color: darkBlue,
+              }}
+            />
+          </div>
           {/* Submit Button */}
-          <div className="-mt-4">
+          <div className="mt-4">
             <button
               type="submit"
               className="px-8 py-3 border-2 font-semibold rounded-lg transition-all shadow-md"

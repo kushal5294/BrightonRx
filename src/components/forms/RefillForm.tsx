@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Trash2 } from "lucide-react";
 import { darkBlue } from "../../utils/constants";
+import { handleFormSubmit } from "../../utils/formSubmit";
 
 interface PrescriptionRow {
   id: number;
@@ -61,16 +62,7 @@ export default function RefillForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setFormData((prev) => ({ ...prev, formSubmitted: true }));
-
-    const { firstName, lastName, phone, notification } = formData;
-    const atLeastOneRx = rxNumbers.some((rx) => rx.trim() !== "");
-
-    if (!firstName || !lastName || !phone || !notification || !atLeastOneRx) {
-      return;
-    }
-
-    console.log("Form submitted:", { formData, rxNumbers, prescriptions });
+    handleFormSubmit({ formData, rxNumbers, prescriptions });
   };
 
   const getBorderStyle = (value: string) => {
@@ -165,7 +157,10 @@ export default function RefillForm() {
               placeholder="Enter phone number here"
               required
               className="w-full md:w-1/2 px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors"
-              style={{ borderColor: getBorderStyle(formData.phone), color: darkBlue }}
+              style={{
+                borderColor: getBorderStyle(formData.phone),
+                color: darkBlue,
+              }}
             />
             {formData.formSubmitted && !formData.phone && (
               <p className="text-red-500 text-sm mt-1">
@@ -380,7 +375,10 @@ export default function RefillForm() {
               value={formData.notification}
               onChange={handleChange}
               className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors bg-white"
-              style={{ borderColor: getBorderStyle(formData.notification), color: darkBlue }}
+              style={{
+                borderColor: getBorderStyle(formData.notification),
+                color: darkBlue,
+              }}
             >
               <option value="">- Please Select -</option>
               <option value="email">Email</option>
