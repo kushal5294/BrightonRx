@@ -10,7 +10,7 @@ export const Home = () => {
         <title>Brighton Rx - Your Local Pharmacy</title>
         <meta
           name="description"
-          content="Your friendly neighborhood pharmacy offering prescription refills, delivery, and personalized health services."
+          content="Your friendly neighborhood pharmacy in Brighton, Michigan, offering prescription refills, delivery, and personalized health services."
         />
       </Helmet>
       <Hero />

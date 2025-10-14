@@ -11,7 +11,7 @@ export const Refill = () => {
         <title>Refill Prescription - Brighton Rx</title>
         <meta
           name="description"
-          content="Quickly and easily refill your prescription online at Brighton Rx. Fill out our simple form to have your medication ready for you."
+          content="Quickly and easily refill your prescription online at Brighton Rx in Brighton, Michigan. Fill out our simple form to have your medication ready for you."
         />
       </Helmet>
       <Banner text="Refill Prescription" />

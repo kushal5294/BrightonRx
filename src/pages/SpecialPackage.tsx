@@ -8,7 +8,7 @@ export const SpecialPackage = () => {
         <title>Special Packaging - Brighton Rx</title>
         <meta
           name="description"
-          content="Learn about our special packaging services to help manage your medications safely and effectively. Ideal for multi-dose regimens."
+          content="Learn about our special packaging services in Brighton, Michigan to help manage your medications safely and effectively. Ideal for multi-dose regimens."
         />
       </Helmet>
       <Banner text="Special Packaging" />

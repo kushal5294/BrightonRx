@@ -12,7 +12,7 @@ export const Transfer = () => {
         <title>Transfer Prescription - Brighton Rx</title>
         <meta
           name="description"
-          content="Easily transfer your prescription to Brighton Rx from another pharmacy. Fill out our simple form and we'll handle the rest."
+          content="Easily transfer your prescription to Brighton Rx in Brighton, Michigan from another pharmacy. Fill out our simple form and we'll handle the rest."
         />
       </Helmet>
       <Banner text="Transfer Prescription" />

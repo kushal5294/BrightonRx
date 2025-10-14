@@ -12,7 +12,7 @@ export const AutoRefill = () => {
         <title>Auto Refills - Brighton Rx</title>
         <meta
           name="description"
-          content="Set up automatic prescription refills at Brighton Rx. Save time and avoid multiple trips to the pharmacy with our convenient auto-refill service."
+          content="Set up automatic prescription refills at Brighton Rx in Brighton, Michigan. Save time and avoid multiple trips to the pharmacy with our convenient auto-refill service."
         />
       </Helmet>
       <Banner text="Auto Refills" />

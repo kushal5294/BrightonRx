@@ -12,7 +12,7 @@ export const Consult = () => {
         <title>Talk to a Pharmacist - Brighton Rx</title>
         <meta
           name="description"
-          content="Have questions about your medication? Schedule a consultation with an expert pharmacist at Brighton Rx for professional health advice."
+          content="Have questions about your medication? Schedule a consultation with an expert pharmacist at Brighton Rx in Brighton, Michigan for professional health advice."
         />
       </Helmet>
       <Banner text="Talk To Our Pharmacist" />

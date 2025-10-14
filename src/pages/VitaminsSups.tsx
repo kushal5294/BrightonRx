@@ -8,7 +8,7 @@ export const VitaminsAndSupplements = () => {
         <title>Vitamins & Supplements - Brighton Rx</title>
         <meta
           name="description"
-          content="Shop a wide selection of high-quality vitamins and supplements at Brighton Rx to support your health and wellness goals."
+          content="Shop a wide selection of high-quality vitamins and supplements at Brighton Rx in Brighton, Michigan to support your health and wellness goals."
         />
       </Helmet>
       <Banner text="Vitamins & Supplements" />

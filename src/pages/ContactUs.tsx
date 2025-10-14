@@ -12,7 +12,7 @@ export const ContactUs = () => {
         <title>Contact Us - Brighton Rx</title>
         <meta
           name="description"
-          content="Get in touch with Brighton Rx. Find our address, phone number, and a contact form to send us a message for any questions or concerns."
+          content="Get in touch with Brighton Rx in Brighton, Michigan. Find our address, phone number, and a contact form to send us a message for any questions or concerns."
         />
       </Helmet>
       <Banner text="Contact Us" />
