@@ -49,10 +49,12 @@ export const Footer = () => {
                     </li>
                     {!isLastItem && (
                       <span
-                        className={`mx-3 h-4 w-px bg-[#11b9bf] self-center ${
+                        className={`mx-3 text-[#11b9bf] self-center text-lg ${
                           isAboutUs ? "hide-on-mobile" : ""
                         }`}
-                      ></span>
+                      >
+                        ·
+                      </span>
                     )}
                   </React.Fragment>
                 );
@@ -69,7 +71,7 @@ export const Footer = () => {
                     <NavItem href={item.href} text={item.text} />
                   </li>
                   {key < arr.length - 1 && (
-                    <span className="mx-3 h-4 w-px bg-[#11b9bf] self-center"></span>
+                    <span className="mx-3 text-[#11b9bf] self-center text-lg">·</span>
                   )}
                 </React.Fragment>
               ))}

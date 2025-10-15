@@ -59,7 +59,7 @@ export const services = [
       />
     ),
     buttonLink: "/talk-to-our-pharmacist",
-    buttonText: "Reach Out",
+    buttonText: "Contact",
   },
   {
     title: "Explore More Services",
