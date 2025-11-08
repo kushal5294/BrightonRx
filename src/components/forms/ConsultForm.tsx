@@ -3,6 +3,8 @@ import { darkBlue } from "../../utils/constants";
 import { handleFormSubmit } from "../../utils/formSubmit";
 
 export default function ConsultForm() {
+  const [isLoading, setIsLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     form: "consult",
     lastName: "",
@@ -52,9 +54,9 @@ export default function ConsultForm() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    handleFormSubmit({ formData });
+    await handleFormSubmit({ formData }, setIsLoading);
   };
 
   return (
@@ -336,6 +338,7 @@ export default function ConsultForm() {
           <div className="mt-4">
             <button
               type="submit"
+              disabled={isLoading}
               className="px-8 py-3 border-2 font-semibold rounded-lg transition-all shadow-md"
               style={{ borderColor: darkBlue, color: darkBlue }}
               onMouseEnter={(e) => {
@@ -345,7 +348,7 @@ export default function ConsultForm() {
                 e.currentTarget.style.backgroundColor = "transparent";
               }}
             >
-              SUBMIT
+              {isLoading ? "Loading..." : "SUBMIT"}
             </button>
           </div>
         </form>

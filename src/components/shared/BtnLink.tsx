@@ -1,3 +1,4 @@
+import { neutralBlue } from "../../utils/constants";
 interface BtnLinkProps {
   href: string;
   text: string;
@@ -8,7 +9,8 @@ export const BtnLink = ({ href, text, className = "" }: BtnLinkProps) => {
   return (
     <a
       href={href}
-      className={`px-6 py-3 rounded-full outline-none relative overflow-hidden border bg-[#175a81] cursor-pointer ${className}`}
+      style={{ backgroundColor: neutralBlue, borderColor: neutralBlue }}
+      className={`px-6 py-3 rounded-full outline-none relative overflow-hidden border cursor-pointer ${className}`}
     >
       <span className="relative z-10 text-white"> {text}</span>
     </a>

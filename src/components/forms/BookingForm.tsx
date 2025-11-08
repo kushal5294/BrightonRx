@@ -3,6 +3,8 @@ import { darkBlue } from "../../utils/constants";
 import { handleFormSubmit } from "../../utils/formSubmit";
 
 export const BookingForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     form: "booking",
     firstName: "",
@@ -50,19 +52,9 @@ export const BookingForm = () => {
     return "rgb(209, 213, 219)";
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormData((prev) => ({ ...prev, formSubmitted: true }));
-    if (
-      formData.firstName &&
-      formData.lastName &&
-      formData.service &&
-      formData.phone &&
-      formData.date &&
-      formData.time
-    ) {
-      handleFormSubmit({ formData });
-    }
+    await handleFormSubmit({ formData }, setIsLoading);
   };
 
   const generateTimeSlots = () => {
@@ -330,6 +322,7 @@ export const BookingForm = () => {
           <div className="-mt-4">
             <button
               type="submit"
+              disabled={isLoading}
               className="px-8 py-3 border-2 font-semibold rounded-lg transition-all shadow-md"
               style={{ borderColor: darkBlue, color: darkBlue }}
               onMouseEnter={(e) =>
@@ -339,7 +332,7 @@ export const BookingForm = () => {
                 (e.currentTarget.style.backgroundColor = "transparent")
               }
             >
-              SUBMIT
+              {isLoading ? "Loading..." : "SUBMIT"}
             </button>
           </div>
         </div>

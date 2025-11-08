@@ -3,6 +3,7 @@ import { Container } from "../shared/Container";
 import logo from "/assets/logos/BrightonRxLogo.png";
 import { navItems } from "./Navbar";
 import { NavItem } from "../shared/NavItem";
+import { lightBlue } from "../../utils/constants";
 
 export const Footer = () => {
   return (
@@ -22,16 +23,22 @@ export const Footer = () => {
           <div className="flex flex-col items-center gap-3 mb-4 md:mb-0">
             <img
               src={logo}
-              className="w-60 lg:w-80"
+              className="w-50 lg:w-60"
               alt="Brighton Rx Pharmacy Logo"
             />
-            <div className="text-[#11b9bf] text-base lg:text-base">
+            <div
+              className=" text-base lg:text-base"
+              style={{ color: lightBlue }}
+            >
               © Brighton Rx 2025
             </div>
           </div>
 
           <div className="flex flex-col items-center">
-            <ul className="flex flex-wrap justify-center items-center text-base lg:text-lg list-none text-[#11b9bf]">
+            <ul
+              className="flex flex-wrap justify-center items-center text-base lg:text-lg list-none"
+              style={{ color: lightBlue }}
+            >
               {navItems.map((item, key) => {
                 const isAboutUs =
                   item.text.toLowerCase() === "about us" ||
@@ -49,7 +56,8 @@ export const Footer = () => {
                     </li>
                     {!isLastItem && (
                       <span
-                        className={`mx-3 text-[#11b9bf] self-center text-lg ${
+                        style={{ color: lightBlue }}
+                        className={`mx-3 self-center text-lg ${
                           isAboutUs ? "hide-on-mobile" : ""
                         }`}
                       >
@@ -61,7 +69,10 @@ export const Footer = () => {
               })}
             </ul>
 
-            <ul className="flex flex-wrap justify-center items-center text-base lg:text-lg list-none text-[#11b9bf]">
+            <ul
+              className="flex flex-wrap justify-center items-center text-base lg:text-lg list-none "
+              style={{ color: lightBlue }}
+            >
               {[
                 { href: "#", text: "Hippa Notice" },
                 { href: "#", text: "Notice of Privacy Practices" },
@@ -71,7 +82,12 @@ export const Footer = () => {
                     <NavItem href={item.href} text={item.text} />
                   </li>
                   {key < arr.length - 1 && (
-                    <span className="mx-3 text-[#11b9bf] self-center text-lg">·</span>
+                    <span
+                      className="mx-3  self-center text-lg"
+                      style={{ color: lightBlue }}
+                    >
+                      ·
+                    </span>
                   )}
                 </React.Fragment>
               ))}

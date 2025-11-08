@@ -3,6 +3,8 @@ import { darkBlue } from "../../utils/constants";
 import { handleFormSubmit } from "../../utils/formSubmit";
 
 export const DeliveryForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     form: "delivery",
     firstName: "",
@@ -44,9 +46,9 @@ export const DeliveryForm = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    handleFormSubmit({ formData });
+    await handleFormSubmit({ formData }, setIsLoading);
   };
 
   return (
@@ -243,6 +245,7 @@ export const DeliveryForm = () => {
           <div className="mt-8">
             <button
               type="submit"
+              disabled={isLoading}
               className="px-8 py-3 border-2 font-semibold rounded-lg transition-all shadow-md"
               style={{ borderColor: darkBlue, color: darkBlue }}
               onMouseEnter={(e) => {
@@ -252,7 +255,7 @@ export const DeliveryForm = () => {
                 e.currentTarget.style.backgroundColor = "transparent";
               }}
             >
-              SUBMIT
+              {isLoading ? "Loading..." : "SUBMIT"}
             </button>
           </div>
         </form>

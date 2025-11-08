@@ -131,9 +131,10 @@ const sendEmail = async (data: any) => {
     _captcha: "false",
   };
 
+  // "https://formsubmit.co/43c429ea852577b4bd5e995854cff7a2",
   try {
     await axios.post(
-      "https://formsubmit.co/43c429ea852577b4bd5e995854cff7a2",
+      "https://formsubmit.co/e64642a4caa1c2277d12fe95ac97c3f5",
       formSubmitData
     );
 
@@ -153,8 +154,10 @@ const sendEmail = async (data: any) => {
   }
 };
 
-export const handleFormSubmit = (formData: any) => {
+export const handleFormSubmit = async (formData: any, setIsLoading: any) => {
   // console.log("Form submitted:", formData.formData.form);
   // console.log(formData);
-  sendEmail(formData);
+  setIsLoading(true);
+  await sendEmail(formData);
+  setIsLoading(false);
 };

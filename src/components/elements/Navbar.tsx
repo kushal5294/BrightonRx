@@ -3,6 +3,7 @@ import { Container } from "../shared/Container";
 import logo from "/assets/logos/BrightonRxLogo.png";
 import { NavItem } from "../shared/NavItem";
 import { phone, email } from "../../utils/constants";
+import { darkBlue } from "../../utils/constants";
 
 export const navItems = [
   { href: "/", text: "Home" },
@@ -16,7 +17,7 @@ export const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <header className="z-50 py-6 bg-white text-[#175a81]">
+    <header className="z-50 py-6 bg-white" style={{ color: darkBlue }}>
       <Container>
         <nav className="w-full flex flex-col lg:flex-row lg:items-start lg:justify-between">
           {/* --- Top Row: Logo + Dropdown / Nav Links --- */}
@@ -34,7 +35,8 @@ export const Navbar = () => {
             <div className="lg:hidden relative mt-4">
               <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}
-                className="flex items-center gap-2 px-3 py-2 border border-[#175a81] rounded-md text-[#175a81]"
+                style={{ color: darkBlue, borderColor: darkBlue }}
+                className="flex items-center gap-2 px-3 py-2 border rounded-md"
               >
                 {/* Hamburger icon */}
                 <span className="flex flex-col justify-between w-5 h-4">
@@ -45,7 +47,10 @@ export const Navbar = () => {
               </button>
 
               {dropdownOpen && (
-                <ul className="absolute right-0 mt-2 w-40 bg-[#175a81] rounded-md shadow-lg overflow-hidden z-50">
+                <ul
+                  style={{ backgroundColor: darkBlue }}
+                  className="absolute right-0 mt-2 w-40 rounded-md shadow-lg overflow-hidden z-50"
+                >
                   {navItems.map((item, key) => (
                     <li
                       key={key}
@@ -83,7 +88,10 @@ export const Navbar = () => {
               </ul>
 
               {/* Contact Info in the same container, row below links */}
-              <div className="flex flex-row items-center gap-4 text-[#175a81] text-lg divide-x divide-gray-300">
+              <div
+                className="flex flex-row items-center gap-4 text-lg divide-x divide-gray-300"
+                style={{ color: darkBlue }}
+              >
                 {/* Email */}
                 <div className="flex items-center gap-2 px-3">
                   <svg
@@ -120,7 +128,10 @@ export const Navbar = () => {
           </div>
 
           {/* --- Contact Info for small/medium --- */}
-          <div className="w-full flex flex-row items-center justify-center lg:hidden text-[#175a81] text-base md:text-lg gap-2">
+          <div
+            className="w-full flex flex-row items-center justify-center lg:hidden text-base md:text-lg gap-2"
+            style={{ color: darkBlue }}
+          >
             <div className="flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

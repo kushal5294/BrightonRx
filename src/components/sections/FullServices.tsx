@@ -5,6 +5,7 @@ import { Paragraph } from "../shared/Paragraph";
 import { Title } from "../shared/Title";
 import { phone } from "../../utils/constants";
 import { Link } from "react-router-dom";
+import { darkBlue } from "../../utils/constants";
 export const FullServices = () => {
   return (
     <section id="services" className="mb-13 mt-15">
@@ -45,14 +46,16 @@ export const FullServices = () => {
             <Paragraph>
               For further details about our services, you may call us at{" "}
               <a
-                className="text-[#172554] font-semibold hover:underline"
+                style={{ color: darkBlue }}
+                className="font-semibold hover:underline"
                 href={`tel:${phone}`}
               >
                 <strong>{phone}</strong>
               </a>{" "}
               or{" "}
               <Link
-                className="text-[#172554] font-semibold hover:underline"
+                style={{ color: darkBlue }}
+                className="font-semibold hover:underline"
                 to="/contact-us"
               >
                 <strong>send us a message</strong>

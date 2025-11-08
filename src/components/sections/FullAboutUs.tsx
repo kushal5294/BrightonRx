@@ -3,6 +3,8 @@ import { Paragraph } from "../shared/Paragraph";
 import { Title } from "../shared/Title";
 import { phone } from "../../utils/constants";
 import { Link } from "react-router-dom";
+import { neutralBlue } from "../../utils/constants";
+import { darkBlue } from "../../utils/constants";
 
 export const FullAboutUs = () => {
   return (
@@ -17,7 +19,10 @@ export const FullAboutUs = () => {
 
         <Container className="flex flex-col md:flex-row gap-10 lg:gap-12 -mt-7">
           <div className="w-full md:w-1/3">
-            <div className="bg-[#175a81] text-white p-8 rounded-2xl shadow-lg h-full flex flex-col justify-center text-center md:text-left w-full lg:w-auto">
+            <div
+              style={{ backgroundColor: neutralBlue }}
+              className="text-white p-8 rounded-2xl shadow-lg h-full flex flex-col justify-center text-center md:text-left w-full lg:w-auto"
+            >
               <h3 className="text-2xl font-bold mb-4">Our Mission Statement</h3>
               <p className="text-lg leading-relaxed">
                 To improve our clients' overall quality of health and wellness
@@ -61,7 +66,8 @@ export const FullAboutUs = () => {
               If you are interested in learning more about our pharmacy in
               Brighton, Michigan, you may call us at{" "}
               <a
-                className="text-[#172554] font-semibold hover:underline"
+                style={{ color: darkBlue }}
+                className=" font-semibold hover:underline"
                 href={`tel:${phone}`}
               >
                 <strong>{phone}</strong>
@@ -69,7 +75,8 @@ export const FullAboutUs = () => {
               or{" "}
               <Link
                 to="/contact-us"
-                className="text-[#172554] font-semibold hover:underline"
+                style={{ color: darkBlue }}
+                className=" font-semibold hover:underline"
               >
                 send us a message
               </Link>{" "}

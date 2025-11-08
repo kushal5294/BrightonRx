@@ -10,6 +10,8 @@ interface PrescriptionRow {
 }
 
 export default function TransferForm() {
+  const [isLoading, setIsLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     form: "transfer",
     lastName: "",
@@ -100,10 +102,14 @@ export default function TransferForm() {
     setPrescriptions((prev) => prev.filter((rx) => rx.id !== id));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    handleFormSubmit({ formData, prescriptions, transferAll });
+    await handleFormSubmit(
+      { formData, prescriptions, transferAll },
+      setIsLoading
+    );
   };
+
   return (
     <div className="w-full max-w-4xl mx-auto mb-16 px-4 sm:px-6 md:px-0 -mt-3">
       <div className="bg-white border-2 border-gray-200 rounded-2xl shadow-lg p-6 sm:p-8 md:p-10">
@@ -458,6 +464,7 @@ export default function TransferForm() {
           <div className="-mt-4">
             <button
               type="submit"
+              disabled={isLoading}
               className="px-8 py-3 border-2 font-semibold rounded-lg transition-all shadow-md"
               style={{ borderColor: darkBlue, color: darkBlue }}
               onMouseEnter={(e) => {
@@ -467,7 +474,7 @@ export default function TransferForm() {
                 e.currentTarget.style.backgroundColor = "transparent";
               }}
             >
-              SUBMIT
+              {isLoading ? "Loading..." : "SUBMIT"}
             </button>
           </div>
         </form>

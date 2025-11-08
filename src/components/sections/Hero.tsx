@@ -1,5 +1,8 @@
 import { Container } from "../shared/Container";
 import { Paragraph } from "../shared/Paragraph";
+import { darkBlue } from "../../utils/constants";
+import { neutralBlue } from "../../utils/constants";
+import { lightBlue } from "../../utils/constants";
 
 export const Hero = () => {
   return (
@@ -38,8 +41,13 @@ export const Hero = () => {
           <span
             className="absolute inset-0 rounded-3xl blur-[60px] opacity-40"
             style={{
-              background:
-                "radial-gradient(circle at center, #199ca0, #12a89d 40%, #185b81 70%, transparent 100%)",
+              background: `radial-gradient(
+              circle at center,
+              ${lightBlue},
+              ${neutralBlue} 40%,
+              ${darkBlue} 70%,
+              transparent 100%
+            )`,
             }}
           ></span>
 
