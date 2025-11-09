@@ -3,7 +3,7 @@ import { Container } from "../shared/Container";
 import logo from "/assets/logos/BrightonRxLogo.png";
 import { navItems } from "./Navbar";
 import { NavItem } from "../shared/NavItem";
-import { lightBlue } from "../../utils/constants";
+import { red } from "../../utils/constants";
 
 export const Footer = () => {
   return (
@@ -26,10 +26,7 @@ export const Footer = () => {
               className="w-50 lg:w-60"
               alt="Brighton Rx Pharmacy Logo"
             />
-            <div
-              className=" text-base lg:text-base"
-              style={{ color: lightBlue }}
-            >
+            <div className=" text-base lg:text-base" style={{ color: red }}>
               © Brighton Rx 2025
             </div>
           </div>
@@ -37,7 +34,7 @@ export const Footer = () => {
           <div className="flex flex-col items-center">
             <ul
               className="flex flex-wrap justify-center items-center text-base lg:text-lg list-none"
-              style={{ color: lightBlue }}
+              style={{ color: red }}
             >
               {navItems.map((item, key) => {
                 const isAboutUs =
@@ -56,7 +53,7 @@ export const Footer = () => {
                     </li>
                     {!isLastItem && (
                       <span
-                        style={{ color: lightBlue }}
+                        style={{ color: red }}
                         className={`mx-3 self-center text-lg ${
                           isAboutUs ? "hide-on-mobile" : ""
                         }`}
@@ -71,7 +68,7 @@ export const Footer = () => {
 
             <ul
               className="flex flex-wrap justify-center items-center text-base lg:text-lg list-none "
-              style={{ color: lightBlue }}
+              style={{ color: red }}
             >
               {[
                 { href: "#", text: "Hippa Notice" },
@@ -84,7 +81,7 @@ export const Footer = () => {
                   {key < arr.length - 1 && (
                     <span
                       className="mx-3  self-center text-lg"
-                      style={{ color: lightBlue }}
+                      style={{ color: red }}
                     >
                       ·
                     </span>

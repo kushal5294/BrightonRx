@@ -3,8 +3,7 @@ import { Container } from "../shared/Container";
 import { Paragraph } from "../shared/Paragraph";
 import { Title } from "../shared/Title";
 import { darkBlue } from "../../utils/constants";
-import { neutralBlue } from "../../utils/constants";
-import { lightBlue } from "../../utils/constants";
+import { red } from "../../utils/constants";
 
 export const AboutUsComp = () => {
   return (
@@ -18,8 +17,8 @@ export const AboutUsComp = () => {
               style={{
                 background: `radial-gradient(
                               circle at center,
-                              ${lightBlue},
-                              ${neutralBlue} 40%,
+                              ${darkBlue},
+                              ${red} 40%,
                               ${darkBlue} 70%,
                               transparent 100%
                             )`,

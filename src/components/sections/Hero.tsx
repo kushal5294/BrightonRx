@@ -1,8 +1,7 @@
 import { Container } from "../shared/Container";
 import { Paragraph } from "../shared/Paragraph";
 import { darkBlue } from "../../utils/constants";
-import { neutralBlue } from "../../utils/constants";
-import { lightBlue } from "../../utils/constants";
+import { red } from "../../utils/constants";
 
 export const Hero = () => {
   return (
@@ -13,16 +12,16 @@ export const Hero = () => {
           className="relative flex flex-col items-center text-center lg:text-left lg:py-8 lg:items-start
                       lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-1/2 z-10"
         >
-          <h1 className="text-heading-1 text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold">
+          <h1 className="text-heading-1 text-3xl sm:text-4xl md:text-5xl xl:text-5xl font-bold">
             Welcome to
             <br />
             <span
               className="text-transparent bg-clip-text"
               style={{
-                backgroundImage: "linear-gradient(to right, #199ca0, #185b81)",
+                backgroundImage: "linear-gradient(to right, #f74d4d, #175a81)",
               }}
             >
-              Brighton Rx
+              Brighton Rx Pharmacy
             </span>
           </h1>
 
@@ -43,8 +42,8 @@ export const Hero = () => {
             style={{
               background: `radial-gradient(
               circle at center,
-              ${lightBlue},
-              ${neutralBlue} 40%,
+              ${darkBlue},
+              ${red} 40%,
               ${darkBlue} 70%,
               transparent 100%
             )`,

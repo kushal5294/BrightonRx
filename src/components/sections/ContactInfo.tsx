@@ -62,7 +62,7 @@ export const ContactInfo = () => {
                   </p>
 
                   <p>
-                    Fax: <a href="tel:8102157752">810-215-7752</a>
+                    Fax: <a href="tel:8108576010">810-857-6010</a>
                   </p>
                 </div>
               </div>

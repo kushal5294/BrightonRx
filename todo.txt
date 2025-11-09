@@ -1,0 +1,28 @@
+change the logo to have     #db2e2e as the 
+Brighton + pharmacy as red, and the rx as blue. 
+
+
+Add fax to navbar with the email and the phone
+
+add qr code for the refill to the rx365 app
+
+add page: https://www.westsidedrugsrx.com/pharmacy-resources
+
+add https://dispill-usa.com/marketing-material/ - medicine takers video + flyer
+
+
+remove pharmacist consultation and put the dispill stuff in at delivery. 
+
+Change the domain to brightonrxpharmacy.com
+
+Add hours to the contact
+- Mon to fri - 9-6
+- Sat 9 - 2
+- sun closed
+
+Change Booking to Vaccines: https://peopleandpetspharmacy.com/pages/vaccines-immunization-services
+- steal the header for the free flu and vax + add info about the insurance. 
+
+Add some indication of the coming soon (idea rn is pop up)
+
+
