@@ -39,7 +39,8 @@ export const Footer = () => {
               {navItems.map((item, key) => {
                 const isAboutUs =
                   item.text.toLowerCase() === "about us" ||
-                  item.text.toLowerCase() === "booking";
+                  item.text.toLowerCase() === "resources" ||
+                  item.text.toLowerCase() === "vaccines";
                 const isLastItem = key === navItems.length - 1;
 
                 return (

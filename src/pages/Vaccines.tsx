@@ -1,0 +1,18 @@
+import { Helmet } from "react-helmet-async";
+import { Banner } from "../components/elements/Banner";
+import { VaccineInfo } from "../components/sections/VaccineInfo";
+export const Vaccines = () => {
+  return (
+    <>
+      <Helmet>
+        <title>Vaccines - Brighton Rx</title>
+        <meta
+          name="description"
+          content="Learn about how you can get safely vaccinated in Brighton, MI."
+        />
+      </Helmet>
+      <Banner text="Vaccines" />
+      <VaccineInfo />
+    </>
+  );
+};

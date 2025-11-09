@@ -16,6 +16,7 @@ import { VitaminsAndSupplements } from "./pages/VitaminsSups";
 import { ContactInfo } from "./components/sections/ContactInfo";
 import { StatusModal } from "./components/shared/StatusModal";
 import { Resources } from "./pages/Resources";
+import { Vaccines } from "./pages/Vaccines";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             element={<VitaminsAndSupplements />}
           />
           <Route path="/resources" element={<Resources />} />"
+          <Route path="/vaccines" element={<Vaccines />} />"
         </Routes>
       </BrowserRouter>
       <ContactInfo />

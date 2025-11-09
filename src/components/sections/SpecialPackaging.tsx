@@ -56,24 +56,6 @@ export const SpecialPackaging = () => {
                 : a convenient, safe, and easy-to-use multi-dose packaging
                 system designed to help you take the right medication at the
                 right time.{" "}
-                <button
-                  onClick={() => setShowVideo(true)}
-                  style={{ color: darkBlue }}
-                  className="font-bold inline-flex items-center gap-1 border-b-2 border-transparent hover:border-current pb-0 cursor-pointer"
-                >
-                  <span className="inline-flex items-center gap-1">
-                    Watch Video
-                    <img
-                      src="assets/logos/link.svg"
-                      alt="Link icon"
-                      className="w-4 h-4 inline-block"
-                      style={{
-                        filter:
-                          "invert(14%) sepia(79%) saturate(3781%) hue-rotate(188deg) brightness(93%) contrast(82%)",
-                      }}
-                    />
-                  </span>
-                </button>
               </Paragraph>
 
               <Paragraph>
@@ -102,6 +84,24 @@ export const SpecialPackaging = () => {
                 </Link>{" "}
                 online.
               </Paragraph>
+              <button
+                onClick={() => setShowVideo(true)}
+                style={{ color: darkBlue }}
+                className="font-bold inline-flex items-center gap-1 border-2 rounded-xl border-current px-4 py-2 cursor-pointer hover:bg-blue-50"
+              >
+                <span className="inline-flex items-center gap-1">
+                  Watch Video
+                  <img
+                    src="assets/logos/link.svg"
+                    alt="Link icon"
+                    className="w-4 h-4 inline-block"
+                    style={{
+                      filter:
+                        "invert(14%) sepia(79%) saturate(3781%) hue-rotate(188deg) brightness(93%) contrast(82%)",
+                    }}
+                  />
+                </span>
+              </button>
             </div>
           </div>
 

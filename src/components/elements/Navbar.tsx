@@ -7,7 +7,7 @@ import { darkBlue } from "../../utils/constants";
 
 export const navItems = [
   { href: "/", text: "Home" },
-  { href: "/booking", text: "Booking" },
+  { href: "/vaccines", text: "Vaccines" },
   { href: "/about-us", text: "About Us" },
   { href: "/services", text: "Services" },
   { href: "/resources", text: "Resources" },
