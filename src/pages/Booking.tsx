@@ -9,7 +9,7 @@ export const Booking = () => {
   return (
     <>
       <Helmet>
-        <title>Book an Appointment - Brighton Rx</title>
+        <title>Book an Appointment - Brighton Rx Pharmacy</title>
         <meta
           name="description"
           content="Schedule your vaccination appointment at Brighton Rx in Brighton, Michigan. Use our simple online form to request a date and time that works for you."

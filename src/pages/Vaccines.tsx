@@ -5,7 +5,7 @@ export const Vaccines = () => {
   return (
     <>
       <Helmet>
-        <title>Vaccines - Brighton Rx</title>
+        <title>Vaccines - Brighton Rx Pharmacy</title>
         <meta
           name="description"
           content="Learn about how you can get safely vaccinated in Brighton, MI."

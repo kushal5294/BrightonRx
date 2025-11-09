@@ -7,7 +7,7 @@ export const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Brighton Rx - Your Local Pharmacy</title>
+        <title>Brighton Rx Pharmacy</title>
         <meta
           name="description"
           content="Your friendly neighborhood pharmacy in Brighton, Michigan, offering prescription refills, delivery, and personalized health services."

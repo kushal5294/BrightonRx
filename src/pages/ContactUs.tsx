@@ -9,7 +9,7 @@ export const ContactUs = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us - Brighton Rx</title>
+        <title>Contact Us - Brighton Rx Pharmacy</title>
         <meta
           name="description"
           content="Get in touch with Brighton Rx in Brighton, Michigan. Find our address, phone number, and a contact form to send us a message for any questions or concerns."

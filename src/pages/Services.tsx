@@ -6,7 +6,7 @@ export const Services = () => {
   return (
     <>
       <Helmet>
-        <title>Our Services - Brighton Rx</title>
+        <title>Our Services - Brighton Rx Pharmacy</title>
         <meta
           name="description"
           content="Explore the wide range of pharmacy services offered at Brighton Rx in Brighton, Michigan, including prescription refills, delivery, consultations, and more."

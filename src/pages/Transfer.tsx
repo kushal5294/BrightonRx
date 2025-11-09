@@ -9,7 +9,7 @@ export const Transfer = () => {
   return (
     <>
       <Helmet>
-        <title>Transfer Prescription - Brighton Rx</title>
+        <title>Transfer Prescription - Brighton Rx Pharmacy</title>
         <meta
           name="description"
           content="Easily transfer your prescription to Brighton Rx in Brighton, Michigan from another pharmacy. Fill out our simple form and we'll handle the rest."

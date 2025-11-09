@@ -9,7 +9,7 @@ export const AutoRefill = () => {
   return (
     <>
       <Helmet>
-        <title>Auto Refills - Brighton Rx</title>
+        <title>Auto Refills - Brighton Rx Pharmacy</title>
         <meta
           name="description"
           content="Set up automatic prescription refills at Brighton Rx in Brighton, Michigan. Save time and avoid multiple trips to the pharmacy with our convenient auto-refill service."

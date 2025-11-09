@@ -6,7 +6,7 @@ export const AboutUs = () => {
   return (
     <>
       <Helmet>
-        <title>About Us - Brighton Rx</title>
+        <title>About Us - Brighton Rx Pharmacy</title>
         <meta
           name="description"
           content="Learn more about Brighton Rx, our history, and our commitment to providing the best pharmacy services in Brighton, Michigan."

@@ -8,14 +8,14 @@ import { Link } from "react-router-dom";
 export const SpecialPackaging = () => {
   const [showVideo, setShowVideo] = useState(false);
 
-  const handleOverlayClick = (e: any) => {
-    if (e.target.id === "video-overlay") {
+  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if ((e.target as HTMLDivElement).id === "video-overlay") {
       setShowVideo(false);
     }
   };
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setShowVideo(false);
       }

@@ -9,7 +9,7 @@ export const Delivery = () => {
   return (
     <>
       <Helmet>
-        <title>Delivery Services - Brighton Rx</title>
+        <title>Delivery Services - Brighton Rx Pharmacy</title>
         <meta
           name="description"
           content="Get your medications delivered to your doorstep. Brighton Rx offers convenient and reliable prescription delivery services."

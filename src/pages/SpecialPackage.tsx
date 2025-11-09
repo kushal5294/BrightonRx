@@ -5,7 +5,7 @@ export const SpecialPackage = () => {
   return (
     <>
       <Helmet>
-        <title>Special Packaging - Brighton Rx</title>
+        <title>Special Packaging - Brighton Rx Pharmacy</title>
         <meta
           name="description"
           content="Learn about our special packaging services in Brighton, Michigan to help manage your medications safely and effectively. Ideal for multi-dose regimens."

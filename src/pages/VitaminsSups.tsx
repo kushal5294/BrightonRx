@@ -5,7 +5,7 @@ export const VitaminsAndSupplements = () => {
   return (
     <>
       <Helmet>
-        <title>Vitamins & Supplements - Brighton Rx</title>
+        <title>Vitamins & Supplements - Brighton Rx Pharmacy</title>
         <meta
           name="description"
           content="Shop a wide selection of high-quality vitamins and supplements at Brighton Rx in Brighton, Michigan to support your health and wellness goals."

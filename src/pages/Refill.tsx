@@ -9,7 +9,7 @@ export const Refill = () => {
   return (
     <>
       <Helmet>
-        <title>Refill Prescription - Brighton Rx</title>
+        <title>Refill Prescription - Brighton Rx Pharmacy</title>
         <meta
           name="description"
           content="Quickly and easily refill your prescription online at Brighton Rx in Brighton, Michigan. Fill out our simple form to have your medication ready for you."

@@ -73,8 +73,7 @@ export const VaccineInfo = () => {
             <img
               src="https://media.istockphoto.com/id/1387226163/photo/portrait-of-a-little-boy-with-a-plaster-on-his-arm-after-an-injection.jpg?s=612x612&w=0&k=20&c=3dlo_ztuREvJWLNbdqlgGcztceBgk5qDdU7ulYaErkk="
               alt="Pharmacist assisting senior couple"
-              className="w-full h-full object-cover rounded-2xl shadow-lg object-[-80px_center]"
-              // adjust the var above.
+              className="w-full h-full object-cover rounded-2xl shadow-lg object-[-20px_center]"
             />
           </div>
         </Container>
