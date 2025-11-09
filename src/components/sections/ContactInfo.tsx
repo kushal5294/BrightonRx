@@ -19,10 +19,10 @@ export const ContactInfo = () => {
             feedback, inquiries, and suggestions.
           </Paragraph>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:items-center">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:items-center text-sm">
             {/* Address */}
             <div className="grid grid-cols-2 md:grid-cols-1 gap-6 md:col-span-1 w-full">
-              <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-4">
+              <div className="flex flex-col items-center text-center md:flex-row md:items-center md:text-left gap-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -44,7 +44,7 @@ export const ContactInfo = () => {
               </div>
 
               {/* Phone + Fax */}
-              <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-4">
+              <div className="flex flex-col items-center text-center md:flex-row md:items-center md:text-left gap-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -68,7 +68,7 @@ export const ContactInfo = () => {
               </div>
 
               {/* Email */}
-              <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-4 col-span-2 md:col-span-1 justify-center md:justify-start">
+              <div className="flex flex-col items-center text-center md:flex-row md:items-center md:text-left gap-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -92,7 +92,7 @@ export const ContactInfo = () => {
               </div>
 
               {/* Hours */}
-              <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-4 col-span-2 md:col-span-1 justify-center md:justify-start">
+              <div className="flex flex-col items-center text-center md:flex-row md:items-center md:text-left gap-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
