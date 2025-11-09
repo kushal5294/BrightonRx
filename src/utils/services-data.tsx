@@ -40,6 +40,19 @@ export const services = [
     buttonText: "Schedule",
   },
   {
+    title: "Special Packaging",
+    description: "Recieve Dispill® packaging for your prescriptions.",
+    icon: (
+      <img
+        src="/assets/logos/org.svg"
+        alt="organized icon"
+        className="w-8 h-8"
+      />
+    ),
+    buttonLink: "/special-packaging",
+    buttonText: "Explore",
+  },
+  {
     title: "Delivery Service",
     description: "Get your prescriptions delivered to your doorstep.",
     icon: (
@@ -47,19 +60,6 @@ export const services = [
     ),
     buttonLink: "/deliver",
     buttonText: "Deliver",
-  },
-  {
-    title: "Pharmacist Consultation",
-    description: "Get expert advice regarding your concerns.",
-    icon: (
-      <img
-        src="/assets/logos/doctor.svg"
-        alt="pharmacist icon"
-        className="w-8 h-8"
-      />
-    ),
-    buttonLink: "/talk-to-our-pharmacist",
-    buttonText: "Contact",
   },
   {
     title: "Explore More Services",

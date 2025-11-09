@@ -10,6 +10,7 @@ export const navItems = [
   { href: "/booking", text: "Booking" },
   { href: "/about-us", text: "About Us" },
   { href: "/services", text: "Services" },
+  { href: "/resources", text: "Resources" },
   { href: "/contact-us", text: "Contact Us" },
 ];
 

@@ -39,6 +39,28 @@ export const services = [
     buttonText: "Book",
   },
   {
+    title: "Special Packaging",
+    description: "Recieve Dispill® packaging for your prescriptions.",
+    icon: (
+      <img
+        src="/assets/logos/org.svg"
+        alt="organized icon"
+        className="w-8 h-8"
+      />
+    ),
+    buttonLink: "/special-packaging",
+    buttonText: "Explore",
+  },
+  {
+    title: "Delivery Service",
+    description: "Get your prescriptions delivered to your doorstep.",
+    icon: (
+      <img src="/assets/logos/car.svg" alt="car icon" className="w-8 h-8" />
+    ),
+    buttonLink: "/deliver",
+    buttonText: "Deliver",
+  },
+  {
     title: "Automatic Refill",
     description:
       "Refilled multiple prescriptions at a particular time each month.",
@@ -52,15 +74,7 @@ export const services = [
     buttonLink: "/auto-refill",
     buttonText: "Schedule",
   },
-  {
-    title: "Delivery Service",
-    description: "Get your prescriptions delivered to your doorstep.",
-    icon: (
-      <img src="/assets/logos/car.svg" alt="car icon" className="w-8 h-8" />
-    ),
-    buttonLink: "/deliver",
-    buttonText: "Deliver",
-  },
+
   {
     title: "Pharmacist Consultation",
     description: "Get expert advice regarding your concerns.",
@@ -74,19 +88,7 @@ export const services = [
     buttonLink: "/talk-to-our-pharmacist",
     buttonText: "Contact",
   },
-  {
-    title: "Special Packaging",
-    description: "Request organized packaging for your prescriptions.",
-    icon: (
-      <img
-        src="/assets/logos/org.svg"
-        alt="Packaging icon"
-        className="w-8 h-8"
-      />
-    ),
-    buttonLink: "/special-packaging",
-    buttonText: "Explore",
-  },
+
   {
     title: "Vitamins & Supplements",
     description: "Explore our curated selection of vitamins and supplements.",
@@ -108,5 +110,32 @@ export const services = [
     ),
     buttonLink: "/contact-us",
     buttonText: "Contact",
+  },
+];
+
+export const resourceLinksData = [
+  {
+    name: "Consumer Healthcare Products Association",
+    url: "https://www.chpa.org/",
+  },
+  {
+    name: "RxList",
+    url: "https://www.rxlist.com/",
+  },
+  {
+    name: "ConsumerMedSafety",
+    url: "https://www.consumermedsafety.org/",
+  },
+  {
+    name: "US FDA",
+    url: "https://www.fda.gov/",
+  },
+  {
+    name: "Institure for Safe Medical Practices",
+    url: "https://home.ecri.org/pages/ismp",
+  },
+  {
+    name: "Prescribers Digital Reference",
+    url: "https://www.pdr.net/",
   },
 ];

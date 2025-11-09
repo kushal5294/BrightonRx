@@ -90,6 +90,29 @@ export const ContactInfo = () => {
                   </p>
                 </div>
               </div>
+
+              {/* Hours */}
+              <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-4 col-span-2 md:col-span-1 justify-center md:justify-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-8 h-8 text-primary flex-shrink-0"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <div>
+                  <p>MF: 9:00 AM - 6:00 PM</p>
+                  <p>Sat: 9:00 AM - 2:00 PM</p>
+                  <p>Sun: Closed</p>
+                </div>
+              </div>
             </div>
 
             {/* Google Map */}

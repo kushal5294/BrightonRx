@@ -1,39 +1,86 @@
+import { useState, useEffect } from "react";
 import { Container } from "../shared/Container";
 import { Paragraph } from "../shared/Paragraph";
 import { Title } from "../shared/Title";
-import { phone } from "../../utils/constants";
+import { phone, darkBlue } from "../../utils/constants";
 import { Link } from "react-router-dom";
-import { darkBlue } from "../../utils/constants";
 
 export const SpecialPackaging = () => {
+  const [showVideo, setShowVideo] = useState(false);
+
+  const handleOverlayClick = (e: any) => {
+    if (e.target.id === "video-overlay") {
+      setShowVideo(false);
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setShowVideo(false);
+      }
+    };
+
+    if (showVideo) {
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      window.removeEventListener("keydown", handleKeyDown);
+    }
+
+    // Cleanup
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [showVideo]);
+
   return (
     <section id="services" className="mb-13 mt-15">
       <Container className="space-y-10 md:space-y-12 -mt-4">
-        <Container className="flex flex-col lg:flex-row gap-10 lg:gap-12">
+        <Container className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-stretch">
+          {/* LEFT CONTENT */}
           <div className="w-full lg:w-2/3 flex flex-col space-y-6 text-center md:text-left">
-            <Title> We help you improve your medication adherence. </Title>
+            <Title>
+              {" "}
+              We help you improve your medication adherence with Dispill®{" "}
+            </Title>
 
             <div className="space-y-4">
               <Paragraph>
                 When you are a senior or someone with a medical condition,
-                taking multiple medications becomes a part of life. You need a
-                variety of medicines to keep your body functioning. However, it
-                comes as no surprise that every now and then, you forget to take
-                your medicine at the right time. As a solution to this problem,{" "}
+                taking multiple medications becomes a part of life. That’s why{" "}
                 <span style={{ color: darkBlue }} className="font-bold">
                   Brighton Rx Pharmacy
                 </span>{" "}
-                offers special packaging.
+                proudly offers{" "}
+                <span style={{ color: darkBlue }} className="font-bold">
+                  Dispill®
+                </span>
+                : a convenient, safe, and easy-to-use multi-dose packaging
+                system designed to help you take the right medication at the
+                right time.{" "}
+                <button
+                  onClick={() => setShowVideo(true)}
+                  style={{ color: darkBlue }}
+                  className="font-bold inline-flex items-center gap-1 border-b-2 border-transparent hover:border-current pb-0 cursor-pointer"
+                >
+                  <span className="inline-flex items-center gap-1">
+                    Watch Video
+                    <img
+                      src="assets/logos/link.svg"
+                      alt="Link icon"
+                      className="w-4 h-4 inline-block"
+                      style={{
+                        filter:
+                          "invert(14%) sepia(79%) saturate(3781%) hue-rotate(188deg) brightness(93%) contrast(82%)",
+                      }}
+                    />
+                  </span>
+                </button>
               </Paragraph>
 
               <Paragraph>
-                We can provide up to a month’s worth of prescriptions. We can
-                group your medicines according to the time when each medicine
-                must be taken during the day. This can be beneficial to those
-                who often forget if they had already taken a particular medicine
-                already. Our special packaging service is just one of the many
-                ways we can help you improve your health and overall quality of
-                life.
+                We can provide up to a month’s worth of prescriptions, grouping
+                your medicines according to the times they need to be taken
+                during the day. This helps reduce confusion and ensures you stay
+                on track with your prescribed regimen.
               </Paragraph>
 
               <Paragraph>
@@ -57,16 +104,40 @@ export const SpecialPackaging = () => {
               </Paragraph>
             </div>
           </div>
+
+          {/* RIGHT IMAGE */}
           <div className="w-full lg:w-1/3 hidden lg:block">
-            <img
-              src="https://media.istockphoto.com/id/1419247828/photo/happy-black-female-pharmacist-assisting-senior-couple-in-choosing-medicine-in-a-pharmacy.jpg?s=612x612&w=0&k=20&c=WMrhlqrUnFXlY-t3WCkE9ZBPZMQmKK6H1niUV2r5e0c="
-              alt="Pharmacist assisting senior couple"
-              className="w-full h-full object-cover rounded-2xl shadow-lg object-[-80px_center]"
-              // adjust the var above.
-            />
+            <div className="h-full flex">
+              <img
+                src="assets/logos/dispill-flyer.png"
+                alt="Pharmacist assisting senior couple"
+                className="w-full h-full object-cover object-center scale-120 mt-[40px]"
+              />
+            </div>
           </div>
         </Container>
       </Container>
+
+      {/* VIDEO MODAL */}
+      {showVideo && (
+        <div
+          id="video-overlay"
+          onClick={handleOverlayClick}
+          className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" // transparent black background
+        >
+          <div className="bg-white rounded-2xl overflow-hidden shadow-2xl w-[90%] max-w-3xl relative">
+            <div className="aspect-video">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/OBwWvn-beiY"
+                title="Dispill Video"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

@@ -15,6 +15,7 @@ import { SpecialPackage } from "./pages/SpecialPackage";
 import { VitaminsAndSupplements } from "./pages/VitaminsSups";
 import { ContactInfo } from "./components/sections/ContactInfo";
 import { StatusModal } from "./components/shared/StatusModal";
+import { Resources } from "./pages/Resources";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             path="/vitamins-and-supplements"
             element={<VitaminsAndSupplements />}
           />
+          <Route path="/resources" element={<Resources />} />"
         </Routes>
       </BrowserRouter>
       <ContactInfo />
