@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { AboutUsComp } from "../components/sections/AboutUs";
 import { Hero } from "../components/sections/Hero";
 import { Services } from "../components/sections/Services";
+import ComingSoon from "../components/elements/ComingSoon";
 
 export const Home = () => {
   return (
@@ -13,6 +14,7 @@ export const Home = () => {
           content="Your friendly neighborhood pharmacy in Brighton, Michigan, offering prescription refills, delivery, and personalized health services."
         />
       </Helmet>
+      <ComingSoon />
       <Hero />
       <div className="h-16" />
 
