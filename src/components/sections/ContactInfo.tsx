@@ -21,7 +21,7 @@ export const ContactInfo = () => {
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:items-center text-sm">
             {/* Address */}
-            <div className="grid grid-cols-2 md:grid-cols-1 gap-6 md:col-span-1 w-full">
+            <div className="grid grid-cols-2 text-xs md:text-sm md:grid-cols-1 gap-6 md:col-span-1 w-full">
               <div className="flex flex-col items-center text-center md:flex-row md:items-center md:text-left gap-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

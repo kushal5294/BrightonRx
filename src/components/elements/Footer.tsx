@@ -33,7 +33,7 @@ export const Footer = () => {
 
           <div className="flex flex-col items-center">
             <ul
-              className="flex flex-wrap justify-center items-center text-base lg:text-lg list-none"
+              className="flex flex-wrap justify-center items-center text-sm lg:text-lg list-none"
               style={{ color: red }}
             >
               {navItems.map((item, key) => {
@@ -68,7 +68,7 @@ export const Footer = () => {
             </ul>
 
             <ul
-              className="flex flex-wrap justify-center items-center text-base lg:text-lg list-none "
+              className="flex flex-wrap justify-center items-center text-sm lg:text-lg list-none "
               style={{ color: red }}
             >
               {[
@@ -81,7 +81,7 @@ export const Footer = () => {
                   </li>
                   {key < arr.length - 1 && (
                     <span
-                      className="mx-3  self-center text-lg"
+                      className="mx-3  self-center text-sm"
                       style={{ color: red }}
                     >
                       ·

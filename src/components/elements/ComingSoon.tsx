@@ -4,7 +4,7 @@ export const ComingSoon: React.FC = () => {
   const text = "Coming Soon";
 
   return (
-    <div className="relative bg-red-600 text-white overflow-hidden py-3">
+    <div className="relative bg-red-600 text-white overflow-hidden py-3 mb-6">
       <div className="flex animate-scroll-left whitespace-nowrap">
         {/* First set */}
         {[...Array(50)].map((_, i) => (
