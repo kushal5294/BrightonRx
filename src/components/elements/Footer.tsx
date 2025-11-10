@@ -7,7 +7,10 @@ import { red } from "../../utils/constants";
 
 export const Footer = () => {
   return (
-    <footer className="relative pt-9 pb-5 bg-gray-800 lg:bg-box-bg">
+    <footer
+      // style={{ backgroundColor: "#277ae6" }}
+      className="relative pt-9 pb-5 bg-gray-200 lg:bg-box-bg"
+    >
       <style>{`
         .hide-on-mobile {
           display: none;
