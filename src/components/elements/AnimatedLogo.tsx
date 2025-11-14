@@ -1,115 +1,146 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export const AnimatedLogo = () => {
   const [mounted, setMounted] = useState(false);
+  const [pillOffsets, setPillOffsets] = useState<number[]>([]);
+
+  const numPills = 9;
+  const ANIMATION_DURATION = 2; // seconds
 
   useEffect(() => {
     setMounted(true);
+
+    // Load or generate deterministic offsets
+    const saved = sessionStorage.getItem("pillWaveOffsets");
+    if (saved) {
+      setPillOffsets(JSON.parse(saved));
+    } else {
+      // Linear wave offsets from 0 → 1
+      const offsets = Array.from({ length: numPills }, (_, i) => i / numPills);
+      sessionStorage.setItem("pillWaveOffsets", JSON.stringify(offsets));
+      setPillOffsets(offsets);
+    }
   }, []);
 
-  // ANIMATION VARIABLES - Adjust these to customize the bounce
-  const outerRadius = 31; // Distance from center at furthest point
-  const bounceRange = 2; // Total bounce distance
-  const innerRadius = outerRadius - bounceRange; // Calculated closest point
+  if (pillOffsets.length === 0) return null;
 
-  // Define pill positions - 9 pills evenly spaced from 135° to 225°
+  const outerRadius = 33;
+  const bounceRange = 2;
+  const innerRadius = outerRadius - bounceRange;
   const startAngle = 135;
   const endAngle = 225;
   const totalAngle = 360 - (endAngle - startAngle);
-  const numPills = 9;
   const angleStep = totalAngle / (numPills - 1);
 
   const pillPositions = Array.from({ length: numPills }, (_, i) => {
-    let angle = startAngle + angleStep * i;
-    if (angle >= 360) angle -= 360;
+    const angle = startAngle + angleStep * i;
+    const rad = (angle * Math.PI) / 180;
+    const xOuter = Math.cos(rad) * outerRadius;
+    const yOuter = Math.sin(rad) * outerRadius;
+    const xInner = Math.cos(rad) * innerRadius;
+    const yInner = Math.sin(rad) * innerRadius;
 
-    // Alternate color pattern
+    const phaseOffset = pillOffsets[i] * ANIMATION_DURATION;
+
     const isBottomPill = i === 0 || i === numPills - 1;
     const isBlueFirst = isBottomPill ? false : i % 2 === 1;
 
-    // Alternate animation phase - every other pill starts at opposite phase
-    const animationPhase = i % 2 === 0 ? 0 : 1; // 0s or 1s (full cycle offset)
-
     return {
-      angle,
       id: i + 1,
+      xOuter,
+      yOuter,
+      xInner,
+      yInner,
+      angle,
+      phaseOffset,
       isBlueFirst,
-      animationPhase,
     };
   });
 
   return (
-    <div className="flex items-end">
-      <div className="relative w-20 h-20">
-        {/* Pills */}
-        {pillPositions.map(({ angle, id, isBlueFirst, animationPhase }) => {
-          const radian = (angle * Math.PI) / 180;
+    <div className="flex items-end w-40 sm:w-58">
+      <div className="relative" style={{ width: "40%", aspectRatio: "1/1" }}>
+        {pillPositions.map(
+          ({
+            id,
+            xOuter,
+            yOuter,
+            xInner,
+            yInner,
+            angle,
+            phaseOffset,
+            isBlueFirst,
+          }) => {
+            const gradient = !isBlueFirst
+              ? "linear-gradient(90deg, #1e3a5f 50%, #e63946 50%)"
+              : "linear-gradient(90deg, #e63946 50%, #1e3a5f 50%)";
 
-          // Calculate outer position (furthest from center)
-          const xOuter = Math.cos(radian) * outerRadius;
-          const yOuter = Math.sin(radian) * outerRadius;
-
-          // Calculate inner position (closest to center)
-          const xInner = Math.cos(radian) * innerRadius;
-          const yInner = Math.sin(radian) * innerRadius;
-
-          // Gradient direction based on color pattern
-          const gradient = !isBlueFirst
-            ? "linear-gradient(90deg, #1e3a5f 50%, #e63946 50%)"
-            : "linear-gradient(90deg, #e63946 50%, #1e3a5f 50%)";
-
-          return (
-            <div
-              key={id}
-              className="absolute"
-              style={{
-                left: "50%",
-                top: "50%",
-                transform: `translate(-50%, -50%)`,
-                animation: mounted
-                  ? `bounce-${id} 2s ease-in-out infinite`
-                  : "none",
-                animationDelay: `${animationPhase}s`,
-              }}
-            >
+            return (
               <div
+                key={id}
+                className="absolute"
                 style={{
-                  width: "20px",
-                  height: "9px",
-                  borderRadius: "10px",
-                  background: gradient,
-                  transform: `rotate(${angle}deg)`,
+                  left: "50%",
+                  top: "50%",
+                  width: "100%",
+                  height: "100%",
+                  pointerEvents: "none",
                 }}
-              />
-              <style>{`
-                @keyframes bounce-${id} {
-                  0%, 100% {
-                    transform: translate(
-                      calc(-50% + ${xOuter}px),
-                      calc(-50% + ${yOuter}px)
-                    );
+              >
+                {/* Animated wrapper */}
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    animation: mounted
+                      ? `bounce-${id} ${ANIMATION_DURATION}s ease-in-out infinite alternate`
+                      : "none",
+                    animationDelay: `${phaseOffset}s`,
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "absolute",
+                      left: "50%",
+                      top: "50%",
+                      width: "20%",
+                      height: "10%",
+                      borderRadius: "10px",
+                      background: gradient,
+                      transform: `translate(-50%, -50%) rotate(${angle}deg)`,
+                    }}
+                  />
+                </div>
+                <style>{`
+                  @keyframes bounce-${id} {
+                    0% {
+                      transform: translate(calc(-50% + ${xOuter}%),
+                                           calc(-50% + ${yOuter}%));
+                    }
+                    50% {
+                      transform: translate(calc(-50% + ${xInner}%),
+                                           calc(-50% + ${yInner}%));
+                    }
+                    100% {
+                      transform: translate(calc(-50% + ${xOuter}%),
+                                           calc(-50% + ${yOuter}%));
+                    }
                   }
-                  50% {
-                    transform: translate(
-                      calc(-50% + ${xInner}px),
-                      calc(-50% + ${yInner}px)
-                    );
-                  }
-                }
-              `}</style>
-            </div>
-          );
-        })}
+                `}</style>
+              </div>
+            );
+          }
+        )}
 
-        {/* Center image */}
+        {/* Center logo */}
         <div
           className="absolute flex items-center justify-center"
           style={{
-            left: "53%",
+            left: "52%",
             top: "65%",
             transform: "translate(-50%, -50%)",
-            width: "50px",
-            height: "50px",
+            width: "55%",
+            height: "55%",
             zIndex: 10,
           }}
         >
@@ -121,12 +152,14 @@ export const AnimatedLogo = () => {
         </div>
       </div>
 
-      {/* Text logo aligned to bottom */}
-      <div className="flex items-end pt-10">
+      <div
+        className="flex items-end -ml-1"
+        style={{ width: "65%", height: "100%" }}
+      >
         <img
           src="/assets/logos/logo-text.png"
           alt="Logo Text"
-          className="h-12 object-contain"
+          className="object-contain"
         />
       </div>
     </div>
