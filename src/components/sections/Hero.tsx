@@ -1,9 +1,19 @@
+import { useState, useEffect } from "react";
 import { Container } from "../shared/Container";
 import { Paragraph } from "../shared/Paragraph";
 import { darkBlue } from "../../utils/constants";
 import { red } from "../../utils/constants";
 
 export const Hero = () => {
+  const [isSmall, setIsSmall] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsSmall(window.innerWidth < 640);
+    handleResize(); // initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section className="relative pt-5 lg:pt-10 -mt-5 lg:mt-4">
       <Container className="flex flex-col lg:flex-row gap-10 lg:gap-12">
@@ -18,7 +28,10 @@ export const Hero = () => {
             <span
               className="text-transparent bg-clip-text"
               style={{
-                backgroundImage: "linear-gradient(to right, #f74d4d, #175a81)",
+                backgroundImage: isSmall
+                  ? undefined
+                  : "linear-gradient(to right, #f74d4d, #175a81)",
+                color: isSmall ? red : undefined,
               }}
             >
               Brighton Rx Pharmacy

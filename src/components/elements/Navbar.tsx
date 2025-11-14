@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Container } from "../shared/Container";
 import { AnimatedLogo } from "./AnimatedLogo";
-import logo from "/assets/logos/BrightonRxLogo.png";
 import { NavItem } from "../shared/NavItem";
 import { phone, email, fax } from "../../utils/constants";
 import { darkBlue } from "../../utils/constants";
@@ -27,11 +26,6 @@ export const Navbar = () => {
             {/* Logo */}
             <a href="/" className="flex-shrink-0 flex items-center">
               <AnimatedLogo />
-              <img
-                src={logo}
-                alt="Brighton Rx Pharmacy Logo"
-                className="w-40 sm:w-60" // smaller on small screens
-              />
             </a>
 
             {/* Dropdown for small/medium */}
