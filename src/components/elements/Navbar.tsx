@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Container } from "../shared/Container";
+import { AnimatedLogo } from "./AnimatedLogo";
 import logo from "/assets/logos/BrightonRxLogo.png";
 import { NavItem } from "../shared/NavItem";
 import { phone, email, fax } from "../../utils/constants";
@@ -25,6 +26,7 @@ export const Navbar = () => {
           <div className="w-full flex justify-between items-center mb-4 lg:mb-0">
             {/* Logo */}
             <a href="/" className="flex-shrink-0 flex items-center">
+              <AnimatedLogo />
               <img
                 src={logo}
                 alt="Brighton Rx Pharmacy Logo"

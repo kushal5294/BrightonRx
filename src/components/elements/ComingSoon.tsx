@@ -5,32 +5,33 @@ export const ComingSoon: React.FC = () => {
   const text = "Coming Soon";
 
   return (
-    <div
-      className="relative bg-red-600 text-white overflow-hidden py-3 mb-6"
-      style={{ backgroundColor: darkBlue }}
-    >
-      <div className="flex animate-scroll-left whitespace-nowrap">
-        {/* First set */}
-        {[...Array(50)].map((_, i) => (
-          <span
-            key={`first-${i}`}
-            className="inline-block font-bold text-lg uppercase px-16"
-          >
-            {text}
-          </span>
-        ))}
-        {/* Duplicate set for seamless loop */}
-        {[...Array(50)].map((_, i) => (
-          <span
-            key={`second-${i}`}
-            className="inline-block font-bold text-lg uppercase px-16"
-          >
-            {text}
-          </span>
-        ))}
-      </div>
+    <>
+      <div
+        className="relative bg-red-600 text-white overflow-hidden py-3 mb-6"
+        style={{ backgroundColor: darkBlue }}
+      >
+        <div className="flex animate-scroll-left whitespace-nowrap">
+          {/* First set */}
+          {[...Array(50)].map((_, i) => (
+            <span
+              key={`first-${i}`}
+              className="inline-block font-bold text-lg uppercase px-16"
+            >
+              {text}
+            </span>
+          ))}
+          {/* Duplicate set for seamless loop */}
+          {[...Array(50)].map((_, i) => (
+            <span
+              key={`second-${i}`}
+              className="inline-block font-bold text-lg uppercase px-16"
+            >
+              {text}
+            </span>
+          ))}
+        </div>
 
-      <style>{`
+        <style>{`
         @keyframes scroll-left {
           0% {
             transform: translateX(-50%);
@@ -45,7 +46,8 @@ export const ComingSoon: React.FC = () => {
           display: inline-flex;
         }
       `}</style>
-    </div>
+      </div>
+    </>
   );
 };
 
