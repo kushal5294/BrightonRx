@@ -59,7 +59,7 @@ export const AnimatedLogo = () => {
   return (
     <div className="flex items-end w-40 sm:w-58">
       <div className="relative" style={{ width: "40%", aspectRatio: "1/1" }}>
-        {pillPositions.map(({ angle, id, isBlueFirst, animationPhase }) => {
+        {pillPositions.map(({ angle, id, animationPhase }) => {
           const r = (angle * Math.PI) / 180;
 
           const xOuter = Math.cos(r) * outerRadius;
@@ -67,9 +67,7 @@ export const AnimatedLogo = () => {
           const xInner = Math.cos(r) * innerRadius;
           const yInner = Math.sin(r) * innerRadius;
 
-          const gradient = !isBlueFirst
-            ? "linear-gradient(90deg, #1e3a5f 50%, #e63946 50%)"
-            : "linear-gradient(90deg, #e63946 50%, #1e3a5f 50%)";
+          const gradient = "linear-gradient(90deg, #1e3a5f 50%, #e63946 50%)";
 
           return (
             <div
@@ -81,7 +79,7 @@ export const AnimatedLogo = () => {
                 width: "100%",
                 height: "100%",
                 animation: mounted
-                  ? `bounce-${id} 2s ease-in-out infinite`
+                  ? `bounce-${id} 1.25s ease-in-out infinite`
                   : "none",
                 animationDelay: `-${animationPhase}s`,
                 animationFillMode: "both",
