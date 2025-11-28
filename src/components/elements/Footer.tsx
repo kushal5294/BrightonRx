@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "../shared/Container";
-import logo from "/assets/logos/BrightonRxLogo.png";
+import logo from "/assets/logos/BrightonRxLogoVec.svg";
 import { navItems } from "./Navbar";
 import { NavItem } from "../shared/NavItem";
 import { red } from "../../utils/constants";

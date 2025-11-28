@@ -110,8 +110,8 @@ export const SpecialPackaging = () => {
             <div className="h-full flex">
               <img
                 src="assets/logos/dispill-flyer.png"
-                alt="Pharmacist assisting senior couple"
-                className="w-full h-full object-cover object-center scale-120 mt-[40px]"
+                alt="Dispill and Brighton Rx Flyer."
+                className="w-full h-full object-contain object-center scale-100"
               />
             </div>
           </div>
