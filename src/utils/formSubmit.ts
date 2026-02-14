@@ -132,9 +132,10 @@ const sendEmail = async (data: any) => {
   };
 
   // "https://formsubmit.co/43c429ea852577b4bd5e995854cff7a2",
+  // "https://formsubmit.co/e64642a4caa1c2277d12fe95ac97c3f5",
   try {
     await axios.post(
-      "https://formsubmit.co/e64642a4caa1c2277d12fe95ac97c3f5",
+      "https://formsubmit.co/43c429ea852577b4bd5e995854cff7a2",
       formSubmitData
     );
 
