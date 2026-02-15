@@ -75,12 +75,14 @@ export const Footer = () => {
               style={{ color: red }}
             >
               {[
-                { href: "#", text: "Hippa Notice" },
-                { href: "#", text: "Notice of Privacy Practices" },
+                {
+                  href: "/HIPPA-Privace-Practices-Notice.pdf",
+                  text: "Hippa Privacy Practices Notice",
+                },
               ].map((item, key, arr) => (
                 <React.Fragment key={key}>
                   <li className="inline-flex items-center justify-center whitespace-nowrap px-3 py-0.5">
-                    <NavItem href={item.href} text={item.text} />
+                    <NavItem href={item.href} text={item.text} newTab />
                   </li>
                   {key < arr.length - 1 && (
                     <span
