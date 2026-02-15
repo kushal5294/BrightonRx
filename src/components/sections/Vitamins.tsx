@@ -46,8 +46,8 @@ export const Vitamins = () => {
           </div>
           <div className="w-full lg:w-1/3 hidden lg:block">
             <img
-              src="https://www.southtampaimmediatecare.com/wp-content/uploads/2015/03/bigstock-Composition-With-Dietary-Suppl-41861572.jpg"
-              alt="Pharmacist assisting senior couple"
+              src="https://miro.medium.com/v2/resize:fit:1400/1*mTQ4JckiEYeWyYJyTJmNnw.jpeg"
+              alt="Assortment of vitamins and supplements."
               className="w-full h-full object-cover rounded-2xl shadow-lg object-[-10px_center]"
               // adjust the var above.
             />

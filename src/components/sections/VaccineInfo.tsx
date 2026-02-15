@@ -48,7 +48,10 @@ export const VaccineInfo = () => {
                 online.
               </Paragraph>
               <button
-                onClick={() => navigate("/booking")}
+                onClick={() => {
+                  navigate("/booking");
+                  window.scrollTo({ top: 0, behavior: "smooth" }); // or behavior: "auto"
+                }}
                 style={{ color: darkBlue }}
                 className="font-bold inline-flex items-center gap-1 border-2 rounded-xl border-current px-4 py-2 cursor-pointer hover:bg-blue-50"
               >
