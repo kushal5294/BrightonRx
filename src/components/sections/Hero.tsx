@@ -65,11 +65,11 @@ export const Hero = () => {
 
           {/* Hero Image on top */}
           <img
-            src="https://img.freepik.com/premium-photo/pharmacy-medicine-pharmacist-people-stock-check-reading-label-healthcare-inventory-product-shelf-pills-tablet-box-medical-expert-advice-retail-worker-teamwork-help-desk_590464-144097.jpg"
+            src="/brighton-rx-storefront.jpeg"
             alt="Pharmacists helping cutomers at Brighton Rx Pharmacy"
             width={2350}
             height={2359}
-            className="lg:absolute lg:w-full lg:h-full rounded-3xl object-cover lg:max-h-none z-20"
+            className="lg:absolute lg:w-full lg:h-full rounded-3xl object-cover lg:max-h-none z-20 object-[center_-210px]"
           />
         </div>
       </Container>
