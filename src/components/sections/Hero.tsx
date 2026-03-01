@@ -69,7 +69,7 @@ export const Hero = () => {
             alt="Pharmacists helping cutomers at Brighton Rx Pharmacy"
             width={2350}
             height={2359}
-            className="lg:absolute lg:w-full lg:h-full rounded-3xl object-cover lg:max-h-none z-20 object-[center_-210px]"
+            className="lg:absolute lg:w-full lg:h-full rounded-3xl object-cover lg:max-h-none z-20"
           />
         </div>
       </Container>
