@@ -65,8 +65,8 @@ export const Hero = () => {
 
           {/* Hero Image on top */}
           <img
-            src="/brighton-rx-storefront.jpeg"
-            alt="Pharmacists helping cutomers at Brighton Rx Pharmacy"
+            src="/brightonrx-storefront.jpeg"
+            alt="Brighton Rx Pharmacy Storefront"
             width={2350}
             height={2359}
             className="lg:absolute lg:w-full lg:h-full rounded-3xl object-cover lg:max-h-none z-20"
