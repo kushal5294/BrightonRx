@@ -2,7 +2,7 @@ import React from "react";
 import { darkBlue } from "../../utils/constants";
 
 export const ComingSoon: React.FC = () => {
-  const text = "Now Open";
+  const text = "🎉 Now Open 🎉";
 
   return (
     <>
