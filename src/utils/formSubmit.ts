@@ -125,19 +125,18 @@ const jsonToString = (data: any): string => {
 const sendEmail = async (data: any) => {
   const emailContent = jsonToString(data);
 
-  const formSubmitData = {
+  const payload = {
+    firstName: data.formData.firstName,
+    lastName: data.formData.lastName,
     message: emailContent,
-    _subject: `[Action Required] Online Submission From ${data.formData.firstName} ${data.formData.lastName}`,
-    _captcha: "false",
   };
 
-  // "https://formsubmit.co/43c429ea852577b4bd5e995854cff7a2",
-  // "https://formsubmit.co/e64642a4caa1c2277d12fe95ac97c3f5",
   try {
-    await axios.post(
-      "https://formsubmit.co/43c429ea852577b4bd5e995854cff7a2",
-      formSubmitData
-    );
+    await axios.post("https://brightonrxpharmacy.com/api/send-email", payload, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     useModalStore.getState().openModal({
       title: "Submission Received",
@@ -146,6 +145,7 @@ const sendEmail = async (data: any) => {
       status: "success",
     });
   } catch (error) {
+    console.error(error); // keep this for debugging
     useModalStore.getState().openModal({
       title: "Submission Failed",
       message:
