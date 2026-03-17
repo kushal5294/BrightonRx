@@ -17,7 +17,7 @@ export const Services = () => {
           </Paragraph>
         </div>
         <SellingPoint />
-        <div className="h-1" />
+        <div className="h-px" />
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, key) => (
