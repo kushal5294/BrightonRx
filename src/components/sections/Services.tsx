@@ -3,6 +3,7 @@ import { Service } from "../cards/Service";
 import { Container } from "../shared/Container";
 import { Paragraph } from "../shared/Paragraph";
 import { Title } from "../shared/Title";
+import SellingPoint from "../elements/SellingPoint";
 
 export const Services = () => {
   return (
@@ -15,6 +16,8 @@ export const Services = () => {
             Our pharmacy offers quality services at budget-friendly prices.
           </Paragraph>
         </div>
+        <SellingPoint />
+        <div className="h-1" />
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, key) => (
