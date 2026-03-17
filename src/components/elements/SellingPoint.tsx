@@ -15,7 +15,7 @@ export const SellingPoint: React.FC = () => {
 
   const contentToScroll = [...Array(25)].map((_, i) => (
     <React.Fragment key={i}>
-      <span className="inline-block font-bold text-lg uppercase px-16">
+      <span className="inline-block font-bold text-lg uppercase px-8 lg:px-16">
         {texts[i % 2]}
       </span>
       <span className="inline-flex items-center">{icons[i % 2]}</span>
@@ -25,7 +25,7 @@ export const SellingPoint: React.FC = () => {
   return (
     <>
       <div
-        className="relative text-white overflow-hidden py-3 mb-6"
+        className="relative left-1/2 -translate-x-1/2 w-screen text-white overflow-hidden py-3 mb-6"
         style={{ backgroundColor: darkBlue }}
       >
         {/* Sizing Element: This invisible element ensures the parent has the correct height */}
@@ -53,7 +53,7 @@ export const SellingPoint: React.FC = () => {
         }
         
         .animate-scroll-left-1 {
-          animation: scroll-left 400s linear infinite;
+          animation: scroll-left 300s linear infinite;
         }
       `}</style>
       </div>

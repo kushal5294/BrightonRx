@@ -15,7 +15,7 @@ export const ComingSoon: React.FC = () => {
           {[...Array(50)].map((_, i) => (
             <span
               key={`first-${i}`}
-              className="inline-block font-bold text-lg uppercase px-16"
+              className="inline-block font-bold text-lg uppercase px-8 lg:px-16"
             >
               {text}
             </span>
