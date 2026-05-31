@@ -76,7 +76,7 @@ export const Footer = () => {
             >
               {[
                 {
-                  href: "https://brightonrxpharmacy.com/HIPPA-Privace-Practices-Notice.pdf",
+                  href: "https://brightonrxpharmacy.com/HIPPA-Privacy-Practices-Notice.pdf",
                   text: "Hippa Privacy Practices Notice",
                 },
               ].map((item, key, arr) => (
