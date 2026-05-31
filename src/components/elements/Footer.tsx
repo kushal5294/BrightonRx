@@ -30,7 +30,7 @@ export const Footer = () => {
               alt="Brighton Rx Pharmacy Logo"
             />
             <div className=" text-base lg:text-base" style={{ color: red }}>
-              © Brighton Rx 2026
+              © Brighton Rx {new Date().getFullYear()}
             </div>
           </div>
 
